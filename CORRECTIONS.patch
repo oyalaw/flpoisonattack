@@ -1,0 +1,880 @@
+===== selection_attacks.py (new authoritative file) =====
+--- /dev/null	2026-07-18 20:33:47.104054478 +0000
++++ /mnt/data/poison_runtime_corrected/selection_attacks.py	2026-07-18 21:52:09.830176318 +0000
+@@ -0,0 +1,263 @@
++#!/usr/bin/env python3
++"""Selection and geometry aware poisoning primitives.
++
++All functions operate on a peer matrix shaped ``(n_peers, D)`` and return a
++flattened malicious update plus diagnostics. The proxy normally uses float32
++peer matrices for large CNNs to reduce memory pressure.
++"""
++from __future__ import annotations
++
++from typing import Optional, Tuple
++
++import numpy as np
++
++
++def _as_matrix(peer_flat: np.ndarray) -> np.ndarray:
++    peers = np.atleast_2d(np.asarray(peer_flat))
++    if peers.ndim != 2 or peers.shape[0] < 1 or peers.shape[1] < 1:
++        raise ValueError(f"invalid peer matrix shape: {peers.shape}")
++    if not np.all(np.isfinite(peers)):
++        raise ValueError("peer matrix contains non-finite values")
++    return peers.astype(np.float64, copy=False)
++
++
++def _pairwise_sq(matrix: np.ndarray) -> np.ndarray:
++    sq = np.einsum("ij,ij->i", matrix, matrix)
++    distances = sq[:, None] + sq[None, :] - 2.0 * (matrix @ matrix.T)
++    np.fill_diagonal(distances, 0.0)
++    return np.maximum(distances, 0.0)
++
++
++def _krum_scores(matrix: np.ndarray, f: int) -> np.ndarray:
++    n = matrix.shape[0]
++    k = n - int(f) - 2
++    if k < 1:
++        raise ValueError(f"krum undefined: n={n}, f={f}")
++    squared = _pairwise_sq(matrix)
++    scores = np.empty(n, dtype=np.float64)
++    for index in range(n):
++        others = np.array([j for j in range(n) if j != index], dtype=np.int64)
++        order = others[np.argsort(squared[index, others], kind="stable")]
++        scores[index] = float(squared[index, order[:k]].sum())
++    return scores
++
++
++def _selected_rank_low(scores: np.ndarray, index: int) -> int:
++    return int(np.argsort(np.argsort(scores, kind="stable"), kind="stable")[index]) + 1
++
++
++def _harmful_direction(peer_mean: np.ndarray, direction: Optional[np.ndarray]) -> np.ndarray:
++    if direction is None:
++        value = -peer_mean
++    else:
++        value = np.asarray(direction, dtype=np.float64).ravel()
++    norm = float(np.linalg.norm(value))
++    return value / norm if norm > 0.0 else np.zeros_like(peer_mean)
++
++
++def _candidate_geometry(candidate: np.ndarray, peer_mean: np.ndarray, gamma: float) -> dict:
++    mean_norm = float(np.linalg.norm(peer_mean))
++    candidate_norm = float(np.linalg.norm(candidate))
++    cosine = float(
++        np.dot(candidate, peer_mean)
++        / ((candidate_norm * mean_norm) + 1e-12)
++    )
++    return {
++        "peer_mean_norm": mean_norm,
++        "gamma_over_peer_mean_norm": float(gamma / (mean_norm + 1e-12)),
++        "harmful_direction_crossed": int(cosine < 0.0),
++        "cosine_to_peer_mean": cosine,
++    }
++
++
++def craft_selection_optimal(
++    peer_flat: np.ndarray,
++    *,
++    f: int = 1,
++    selection_size: int = 1,
++    direction: Optional[np.ndarray] = None,
++    base: Optional[np.ndarray] = None,
++    gamma_max: float = 50.0,
++    iterations: int = 30,
++    defense: str = "krum",
++    strength: float = 1.0,
++) -> Tuple[np.ndarray, dict]:
++    """Craft a boundary candidate that remains selected by Krum or Multi Krum.
++
++    ``strength`` scales the feasible boundary displacement. A value of one uses
++    the full boundary candidate, while zero returns the benign central base.
++    """
++    peers = _as_matrix(peer_flat)
++    n_peers, _dimension = peers.shape
++    n = n_peers + 1
++    defense = str(defense).strip().lower()
++    if defense not in {"krum", "multi_krum"}:
++        return peers.mean(axis=0), {
++            "feasible": False,
++            "reason": f"unsupported_selection_defense:{defense}",
++            "configured_active_defense": defense,
++        }
++
++    if n < 2 * int(f) + 3:
++        return peers.mean(axis=0), {
++            "feasible": False,
++            "reason": f"krum undefined for n={n}, f={f} (need n>=2f+3)",
++            "configured_active_defense": defense,
++        }
++
++    peer_mean = peers.mean(axis=0)
++    base_vec = (
++        peer_mean.copy()
++        if base is None
++        else np.asarray(base, dtype=np.float64).ravel()
++    )
++    direction_vec = _harmful_direction(peer_mean, direction)
++    peer_scale = float(np.median(np.linalg.norm(peers - peer_mean, axis=1)))
++    peer_scale = peer_scale if peer_scale > 0.0 else 1.0
++    high = float(gamma_max) * peer_scale
++    low = 0.0
++
++    def feasible(gamma: float) -> bool:
++        candidate = base_vec + gamma * direction_vec
++        matrix = np.vstack([peers, candidate[None, :]])
++        scores = _krum_scores(matrix, int(f))
++        return _selected_rank_low(scores, n - 1) <= int(selection_size)
++
++    if not feasible(0.0):
++        return base_vec, {
++            "feasible": False,
++            "reason": "base_not_selected",
++            "gamma": 0.0,
++            "configured_active_defense": defense,
++        }
++
++    for _ in range(max(1, int(iterations))):
++        middle = 0.5 * (low + high)
++        if feasible(middle):
++            low = middle
++        else:
++            high = middle
++
++    boundary_gamma = float(low)
++    applied_strength = float(np.clip(strength, 0.0, 1.0))
++    gamma = boundary_gamma * applied_strength
++    malicious = base_vec + gamma * direction_vec
++    matrix = np.vstack([peers, malicious[None, :]])
++    scores = _krum_scores(matrix, int(f))
++    info = {
++        "feasible": True,
++        "configured_active_defense": defense,
++        "strength": applied_strength,
++        "gamma_boundary": boundary_gamma,
++        "gamma": gamma,
++        "gamma_over_peer_scale": float(gamma / peer_scale),
++        "malicious_krum_score": float(scores[-1]),
++        "min_peer_krum_score": float(scores[:-1].min()),
++        "selection_rank_low": _selected_rank_low(scores, n - 1),
++        "selection_size": int(selection_size),
++    }
++    info.update(_candidate_geometry(malicious, peer_mean, gamma))
++    return malicious, info
++
++
++def craft_alie(peer_flat: np.ndarray, *, z: float = 1.0) -> Tuple[np.ndarray, dict]:
++    peers = _as_matrix(peer_flat)
++    mean = peers.mean(axis=0)
++    std = peers.std(axis=0)
++    direction = -np.sign(mean)
++    direction[direction == 0] = -1.0
++    malicious = mean + abs(float(z)) * std * direction
++    return malicious, {
++        "feasible": True,
++        "z": abs(float(z)),
++        "cosine_to_peer_mean": float(
++            np.dot(malicious, mean)
++            / ((np.linalg.norm(malicious) * np.linalg.norm(mean)) + 1e-12)
++        ),
++    }
++
++
++def craft_ipm(peer_flat: np.ndarray, *, epsilon: float = 1.0) -> Tuple[np.ndarray, dict]:
++    peers = _as_matrix(peer_flat)
++    mean = peers.mean(axis=0)
++    malicious = -abs(float(epsilon)) * mean
++    return malicious, {
++        "feasible": True,
++        "epsilon": abs(float(epsilon)),
++        "cosine_to_peer_mean": -1.0 if np.linalg.norm(mean) > 0 else 0.0,
++    }
++
++
++def _search_distance_boundary(
++    peers: np.ndarray,
++    *,
++    mode: str,
++    gamma_max: float = 50.0,
++    iterations: int = 30,
++    strength: float = 1.0,
++) -> Tuple[np.ndarray, dict]:
++    peer_mean = peers.mean(axis=0)
++    direction = _harmful_direction(peer_mean, None)
++    peer_scale = float(np.median(np.linalg.norm(peers - peer_mean, axis=1))) or 1.0
++
++    if mode == "min_max":
++        pairwise = np.sqrt(_pairwise_sq(peers))
++        threshold = float(np.max(pairwise))
++
++        def feasible(candidate: np.ndarray) -> bool:
++            return (
++                float(np.max(np.linalg.norm(peers - candidate, axis=1)))
++                <= threshold + 1e-12
++            )
++
++        distance_power = 1
++    elif mode == "min_sum":
++        # Min Sum is defined in the same squared Euclidean geometry used by
++        # Krum scores. Summing ordinary Euclidean distances changes the
++        # feasible region and can collapse the attack toward the benign mean.
++        pairwise_squared = _pairwise_sq(peers)
++        threshold = float(np.max(pairwise_squared.sum(axis=1)))
++
++        def feasible(candidate: np.ndarray) -> bool:
++            differences = peers - candidate
++            candidate_sum = float(np.sum(differences * differences, dtype=np.float64))
++            return candidate_sum <= threshold + 1e-12
++
++        distance_power = 2
++    else:
++        raise ValueError(f"unsupported distance boundary mode: {mode}")
++
++    low = 0.0
++    high = float(gamma_max) * peer_scale
++    for _ in range(max(1, int(iterations))):
++        middle = 0.5 * (low + high)
++        candidate = peer_mean + middle * direction
++        if feasible(candidate):
++            low = middle
++        else:
++            high = middle
++
++    boundary_gamma = float(low)
++    applied_strength = float(np.clip(strength, 0.0, 1.0))
++    gamma = boundary_gamma * applied_strength
++    malicious = peer_mean + gamma * direction
++    info = {
++        "feasible": True,
++        "strength": applied_strength,
++        "gamma_boundary": boundary_gamma,
++        "gamma": gamma,
++        "gamma_over_peer_scale": float(gamma / peer_scale),
++        "boundary_mode": mode,
++        "boundary_threshold": threshold,
++        "boundary_distance_power": distance_power,
++    }
++    info.update(_candidate_geometry(malicious, peer_mean, gamma))
++    return malicious, info
++
++
++def craft_min_max(peer_flat: np.ndarray, **kwargs) -> Tuple[np.ndarray, dict]:
++    return _search_distance_boundary(_as_matrix(peer_flat), mode="min_max", **kwargs)
++
++
++def craft_min_sum(peer_flat: np.ndarray, **kwargs) -> Tuple[np.ndarray, dict]:
++    return _search_distance_boundary(_as_matrix(peer_flat), mode="min_sum", **kwargs)
+===== peer_fingerprint.py =====
+--- /mnt/data/peer_fingerprint(3).py	2026-07-18 21:39:31.723253532 +0000
++++ /mnt/data/poison_runtime_corrected/peer_fingerprint.py	2026-07-18 21:55:16.937764839 +0000
+@@ -186,12 +186,82 @@
+             if stored_contract == contract and trace.observations
+         ]
+ 
++    def _round_synchronized_observations(
++        self,
++        traces: Sequence[_ClientTrace],
++        *,
++        round_index: Optional[int],
++        require_full_block: bool,
++    ) -> Tuple[List[_Observation], Dict[str, object]]:
++        """Select one peer observation per client from a single FL round.
++
++        The current round is used only when every eligible peer has already
++        uploaded. Otherwise the latest prior complete round is used. The method
++        never combines observations from different rounds.
++        """
++        eligible_traces = []
++        for trace in traces:
++            if require_full_block:
++                if not any(obs.block is not None for obs in trace.observations):
++                    continue
++            eligible_traces.append(trace)
++
++        requested_round = int(round_index) if round_index is not None else None
++        by_round: Dict[int, Dict[str, _Observation]] = {}
++        for trace in eligible_traces:
++            for obs in trace.observations:
++                if require_full_block and obs.block is None:
++                    continue
++                by_round.setdefault(int(obs.round_index), {})[trace.client_id] = obs
++
++        required_clients = len(eligible_traces)
++        selected_round: Optional[int] = None
++        source = "no_complete_round"
++        if required_clients > 0:
++            if (
++                requested_round is not None
++                and len(by_round.get(requested_round, {})) == required_clients
++            ):
++                selected_round = requested_round
++                source = "exact_requested_round"
++            else:
++                candidates = [
++                    value
++                    for value, observations in by_round.items()
++                    if len(observations) == required_clients
++                    and (requested_round is None or value < requested_round)
++                ]
++                if candidates:
++                    selected_round = max(candidates)
++                    source = (
++                        "latest_complete_round"
++                        if requested_round is None
++                        else "previous_complete_round"
++                    )
++
++        selected: List[_Observation] = []
++        if selected_round is not None:
++            selected_map = by_round[selected_round]
++            for trace in eligible_traces:
++                observation = selected_map.get(trace.client_id)
++                if observation is not None:
++                    selected.append(observation)
++
++        return selected, {
++            "requested_round": requested_round if requested_round is not None else "",
++            "selected_round": selected_round if selected_round is not None else "",
++            "round_source": source,
++            "required_client_count": required_clients,
++            "selected_client_count": len(selected),
++        }
++
+     def peer_envelope(
+         self,
+         exclude_client_id: str,
+         model_contract_sha256: str,
+         *,
+         latest_only: bool = True,
++        round_index: Optional[int] = None,
+     ) -> Tuple[Optional[Envelope], Dict[str, object]]:
+         exclude = str(exclude_client_id or "unknown")
+         contract = str(model_contract_sha256 or "")
+@@ -200,30 +270,36 @@
+                 trace for trace in self._traces_for_contract(contract)
+                 if trace.client_id != exclude
+             ]
++            observations, round_info = self._round_synchronized_observations(
++                traces,
++                round_index=round_index,
++                require_full_block=True,
++            )
+             envelope = Envelope(min_observations=self.min_observations)
+-            full_peer_count = 0
+-            total_observations = 0
+-            sketch_only_peer_count = 0
+-            for trace in traces:
+-                observations = [trace.observations[-1]] if latest_only else list(trace.observations)
+-                full_obs = [obs for obs in observations if obs.block is not None]
+-                if full_obs:
+-                    full_peer_count += 1
+-                    for obs in full_obs:
+-                        envelope.observe(obs.block, copy_block=False)
+-                        total_observations += 1
+-                else:
+-                    sketch_only_peer_count += 1
++            for observation in observations:
++                if observation.block is None:
++                    continue
++                envelope.observe(observation.block, copy_block=False)
++
++            full_capable = sum(
++                1 for trace in traces
++                if any(obs.block is not None for obs in trace.observations)
++            )
+             info: Dict[str, object] = {
+                 "peer_client_count": len(traces),
+-                "peer_full_block_client_count": full_peer_count,
+-                "peer_sketch_only_client_count": sketch_only_peer_count,
+-                "peer_envelope_observations": total_observations,
++                "peer_full_block_client_count": full_capable,
++                "peer_sketch_only_client_count": len(traces) - full_capable,
++                "peer_envelope_observations": len(observations),
+                 "peer_contract_sha256": contract,
+                 "peer_registry_total_bytes": self._total_full_block_bytes,
+                 "peer_registry_total_mb": self._total_full_block_bytes / (1024.0 * 1024.0),
++                "peer_envelope_requested_round": round_info["requested_round"],
++                "peer_envelope_selected_round": round_info["selected_round"],
++                "peer_envelope_round_source": round_info["round_source"],
++                "peer_envelope_required_client_count": round_info["required_client_count"],
++                "peer_envelope_selected_client_count": round_info["selected_client_count"],
+             }
+-            if full_peer_count >= self.min_peers and envelope.ready:
++            if len(observations) >= self.min_peers and envelope.ready:
+                 info["peer_mode"] = "peer_full_envelope"
+                 return envelope, info
+             if len(traces) >= self.min_peers:
+@@ -240,29 +316,47 @@
+         latest_only: bool = True,
+         max_dimensions: Optional[int] = None,
+         dtype=np.float32,
++        round_index: Optional[int] = None,
+     ) -> Tuple[Optional[np.ndarray], Dict[str, object]]:
+         exclude = str(exclude_client_id or "unknown")
+         contract = str(model_contract_sha256 or "")
+         requested_dim = int(max_dimensions or self.geometry_sketch_dim)
+         with self._lock:
++            traces = [
++                trace for trace in self._traces_for_contract(contract)
++                if trace.client_id != exclude
++            ]
++            observations, round_info = self._round_synchronized_observations(
++                traces,
++                round_index=round_index,
++                require_full_block=False,
++            )
+             rows = []
+             peer_ids = []
+-            for trace in self._traces_for_contract(contract):
+-                if trace.client_id == exclude:
++            for trace in traces:
++                chosen = None
++                for observation in observations:
++                    if any(observation is item for item in trace.observations):
++                        chosen = observation
++                        break
++                if chosen is None:
+                     continue
+-                observations = [trace.observations[-1]] if latest_only else list(trace.observations)
+-                for obs in observations:
+-                    sketch = obs.sketch
+-                    if requested_dim < sketch.size:
+-                        positions = np.linspace(0, sketch.size - 1, requested_dim, dtype=np.int64)
+-                        sketch = sketch[positions]
+-                    rows.append(np.asarray(sketch, dtype=dtype))
+-                    peer_ids.append(trace.client_id)
++                sketch = chosen.sketch
++                if requested_dim < sketch.size:
++                    positions = np.linspace(0, sketch.size - 1, requested_dim, dtype=np.int64)
++                    sketch = sketch[positions]
++                rows.append(np.asarray(sketch, dtype=dtype))
++                peer_ids.append(trace.client_id)
+             info = {
+                 "peer_geometry_mode": "deterministic_coordinate_sketch",
+                 "peer_geometry_dimensions": int(rows[0].size) if rows else 0,
+                 "peer_geometry_rows": len(rows),
+                 "peer_geometry_peer_ids": ",".join(peer_ids),
++                "peer_geometry_requested_round": round_info["requested_round"],
++                "peer_geometry_selected_round": round_info["selected_round"],
++                "peer_geometry_round_source": round_info["round_source"],
++                "peer_geometry_required_client_count": round_info["required_client_count"],
++                "peer_geometry_selected_client_count": round_info["selected_client_count"],
+             }
+             if not rows:
+                 return None, info
+@@ -275,27 +369,45 @@
+         *,
+         latest_only: bool = True,
+         dtype=np.float32,
++        round_index: Optional[int] = None,
+     ) -> Tuple[Optional[np.ndarray], Dict[str, object]]:
+         exclude = str(exclude_client_id or "unknown")
+         contract = str(model_contract_sha256 or "")
+         with self._lock:
++            traces = [
++                trace for trace in self._traces_for_contract(contract)
++                if trace.client_id != exclude
++            ]
++            observations, round_info = self._round_synchronized_observations(
++                traces,
++                round_index=round_index,
++                require_full_block=True,
++            )
+             rows = []
+             peer_ids = []
+-            missing_full = []
+-            for trace in self._traces_for_contract(contract):
+-                if trace.client_id == exclude:
++            for trace in traces:
++                chosen = None
++                for observation in observations:
++                    if any(observation is item for item in trace.observations):
++                        chosen = observation
++                        break
++                if chosen is None or chosen.block is None:
+                     continue
+-                observations = [trace.observations[-1]] if latest_only else list(trace.observations)
+-                for obs in observations:
+-                    if obs.block is None:
+-                        missing_full.append(trace.client_id)
+-                        continue
+-                    rows.append(flatten_block(obs.block, dtype=dtype))
+-                    peer_ids.append(trace.client_id)
++                rows.append(flatten_block(chosen.block, dtype=dtype))
++                peer_ids.append(trace.client_id)
++            missing_full = [
++                trace.client_id for trace in traces
++                if not any(obs.block is not None for obs in trace.observations)
++            ]
+             info = {
+                 "peer_full_geometry_rows": len(rows),
+                 "peer_full_geometry_peer_ids": ",".join(peer_ids),
+                 "peer_full_geometry_missing_clients": ",".join(sorted(set(missing_full))),
++                "peer_full_geometry_requested_round": round_info["requested_round"],
++                "peer_full_geometry_selected_round": round_info["selected_round"],
++                "peer_full_geometry_round_source": round_info["round_source"],
++                "peer_full_geometry_required_client_count": round_info["required_client_count"],
++                "peer_full_geometry_selected_client_count": round_info["selected_client_count"],
+             }
+             if not rows:
+                 return None, info
+===== stealth_engine.py =====
+--- /mnt/data/stealth_engine(3).py	2026-07-18 21:39:31.754291754 +0000
++++ /mnt/data/poison_runtime_corrected/stealth_engine.py	2026-07-18 21:53:23.302221821 +0000
+@@ -380,7 +380,7 @@
+         start = min(target, 0.05)
+         return float(start + (target - start) * frac)
+ 
+-    def _peer_context(self):
++    def _peer_context(self, round_index: Optional[int] = None):
+         info = {"peer_mode": "self_only"}
+         registry = self.peer_registry
+         if registry is None:
+@@ -389,6 +389,7 @@
+             peer_env, pinfo = registry.peer_envelope(
+                 self.client_id,
+                 self.model_contract_sha256,
++                round_index=round_index,
+             )
+             info.update(pinfo)
+             peer_geometry, ginfo = registry.peer_geometry_matrix(
+@@ -397,6 +398,7 @@
+                 latest_only=True,
+                 max_dimensions=self.geometry_sketch_dim,
+                 dtype=np.float32,
++                round_index=round_index,
+             )
+             info.update(ginfo)
+             if peer_env is not None:
+@@ -406,7 +408,7 @@
+             info["peer_error"] = str(exc)
+             return None, None, info
+ 
+-    def _full_peer_matrix(self):
++    def _full_peer_matrix(self, round_index: Optional[int] = None):
+         if self.peer_registry is None:
+             return None, {"peer_full_geometry_rows": 0}
+         return self.peer_registry.peer_full_matrix(
+@@ -414,24 +416,39 @@
+             self.model_contract_sha256,
+             latest_only=True,
+             dtype=np.float32,
++            round_index=round_index,
+         )
+ 
+-    def _selection_raw(self, genuine: Block, peer_full: np.ndarray):
++    def _selection_raw(
++        self,
++        genuine: Block,
++        peer_full: np.ndarray,
++        *,
++        strength: float,
++    ):
+         name = self.raw_attack
+         if name == "krum_optimal":
+-            selection_size = max(1, self.multi_krum_m)
++            active = str(self.active_defense or "").strip().lower()
++            if active not in {"krum", "multi_krum"}:
++                return None, {
++                    "feasible": False,
++                    "reason": "krum_optimal_requires_krum_or_multi_krum_server",
++                    "configured_active_defense": active,
++                }
++            selection_size = 1 if active == "krum" else max(1, self.multi_krum_m)
+             malicious, info = craft_selection_optimal(
+                 peer_full,
+                 f=self.derived_f,
+                 selection_size=selection_size,
+-                defense="krum" if selection_size == 1 else "multi_krum",
++                defense=active,
++                strength=strength,
+             )
+         elif name == "alie":
+             malicious, info = craft_alie(peer_full, z=abs(self.alpha))
+         elif name == "min_max":
+             malicious, info = craft_min_max(peer_full)
+         elif name == "min_sum":
+-            malicious, info = craft_min_sum(peer_full)
++            malicious, info = craft_min_sum(peer_full, strength=strength)
+         elif name == "ipm":
+             malicious, info = craft_ipm(peer_full, epsilon=abs(self.alpha))
+         else:
+@@ -578,22 +595,25 @@
+             diagnostics["configured_aggressiveness"] = self.aggressiveness
+             diagnostics["effective_aggressiveness"] = effective_a
+ 
+-            peer_env, peer_geometry, peer_info = self._peer_context()
++            peer_env, peer_geometry, peer_info = self._peer_context(round_index)
+             diagnostics.update(peer_info)
+             proj_env = peer_env if peer_env is not None else self.envelope
+             global_env = peer_env if peer_env is not None else self.envelope
+ 
+             peer_based_attacks = {"krum_optimal", "alie", "min_max", "min_sum", "ipm"}
+             if self.raw_attack in peer_based_attacks:
+-                peer_full, full_info = self._full_peer_matrix()
++                peer_full, full_info = self._full_peer_matrix(round_index)
+                 diagnostics.update(full_info)
+                 if peer_full is None or peer_full.shape[0] < 2:
+                     diagnostics["engine_decision"] = f"{self.raw_attack}_needs_peers"
+                     diagnostics["selection_attack_feasible"] = 0
+                     self._save_state()
+                     return None, diagnostics
+-                raw, sel_info = self._selection_raw(genuine, peer_full)
++                raw, sel_info = self._selection_raw(
++                    genuine, peer_full, strength=effective_a
++                )
+                 diagnostics.update({f"selection_{k}": v for k, v in sel_info.items()})
++                diagnostics["selection_attack_feasible"] = int(bool(sel_info.get("feasible", False)))
+                 if raw is None:
+                     diagnostics["engine_decision"] = "selection_attack_infeasible"
+                     self._save_state()
+===== poison_live.py =====
+--- /mnt/data/poison_live(2).py	2026-07-18 21:39:31.804877071 +0000
++++ /mnt/data/poison_runtime_corrected/poison_live.py	2026-07-18 21:55:48.631375983 +0000
+@@ -442,6 +442,24 @@
+     "peer_sketch_only_client_count", "peer_envelope_observations", "peer_mode",
+     "peer_geometry_mode", "peer_geometry_dimensions", "peer_geometry_rows",
+     "peer_geometry_peer_ids",
++    "peer_envelope_requested_round", "peer_envelope_selected_round",
++    "peer_envelope_round_source", "peer_envelope_required_client_count",
++    "peer_envelope_selected_client_count",
++    "peer_geometry_requested_round", "peer_geometry_selected_round",
++    "peer_geometry_round_source", "peer_geometry_required_client_count",
++    "peer_geometry_selected_client_count",
++    "peer_full_geometry_requested_round", "peer_full_geometry_selected_round",
++    "peer_full_geometry_round_source", "peer_full_geometry_required_client_count",
++    "peer_full_geometry_selected_client_count",
++    "selection_attack_feasible", "selection_feasible", "selection_reason",
++    "selection_configured_active_defense", "selection_strength",
++    "selection_gamma_boundary", "selection_gamma",
++    "selection_gamma_over_peer_scale", "selection_peer_mean_norm",
++    "selection_gamma_over_peer_mean_norm", "selection_harmful_direction_crossed",
++    "selection_malicious_krum_score", "selection_min_peer_krum_score",
++    "selection_selection_rank_low", "selection_selection_size",
++    "selection_cosine_to_peer_mean", "selection_boundary_mode",
++    "selection_boundary_threshold", "selection_boundary_distance_power",
+     "oracle_any_flagged", "oracle_geometry_mode", "oracle_geometry_dimensions",
+     "oracle_coordinate_containment", "oracle_cosine_to_peer_mean",
+     "oracle_norm_in_band", "adaptive_final_aggressiveness",
+@@ -5148,7 +5166,7 @@
+     parser.add_argument("--live-warmup", type=int, default=20, help="[envelope] benign blocks to observe before poisoning begins")
+     parser.add_argument("--live-warmup-rounds", type=int, default=3, help="Initial FL rounds to relay unchanged before poisoning; applies to all live attack types when analyzer round/round_id is available")
+     parser.add_argument("--live-aggressiveness", type=float, default=0.5, help="[envelope] 0=fully benign (max stealth), 1=raw poison (no stealth). Sweep this to trace the frontier.")
+-    parser.add_argument("--live-raw-attack", choices=["sign_flip", "scale", "noise", "ALIE", "min_max", "min_sum", "IPM", "krum_optimal"], default="sign_flip", help="[envelope] poison technique. Own-only: sign_flip/scale/noise (projected into the benign envelope). Peer-based (need peer visibility, crafted at the defense boundary): ALIE, min_max, min_sum, IPM, krum_optimal")
++    parser.add_argument("--live-raw-attack", choices=["sign_flip", "scale", "noise", "ALIE", "min_max", "min_sum", "IPM", "krum_optimal"], default="sign_flip", help="[envelope] poison technique. Own-only: sign_flip/scale/noise (projected into the benign envelope). Peer-based (need peer visibility, crafted at the defense boundary): ALIE, min_max, min_sum, IPM, krum_optimal. krum_optimal requires a Krum or Multi-Krum server")
+     parser.add_argument("--live-k-coord", type=float, default=3.0, help="[envelope] sigma multiplier for per-coordinate benign band")
+     parser.add_argument("--live-k-norm", type=float, default=3.0, help="[envelope] sigma multiplier for per-tensor norm band")
+     parser.add_argument("--live-window", type=int, default=5, help="[envelope] sliding-window size in rounds (0=global; 5 calibrated best on real captures)")
+@@ -5558,11 +5576,17 @@
+             env_window = int(_ask(
+                 "Sliding-window size in rounds (0=global; 5 calibrated best)", "5"))
+             warmup = int(_ask("Benign blocks to observe before attacking (warmup)", "20"))
+-            env_aggressiveness = float(_ask("Aggressiveness 0.0–1.0", "0.3"))
+             env_raw_attack = _ask_choice("Poison technique",
+                                          ["sign_flip", "scale", "noise", "ALIE",
+                                           "min_max", "min_sum", "IPM", "krum_optimal"],
+                                          "sign_flip")
++            if env_raw_attack in ("min_sum", "krum_optimal"):
++                env_aggressiveness = float(_ask(
++                    "Boundary strength 0.0–1.0 (1.0 uses the full feasible boundary)",
++                    "1.0",
++                ))
++            else:
++                env_aggressiveness = float(_ask("Aggressiveness 0.0–1.0", "0.3"))
+             if env_raw_attack in ("sign_flip", "scale"):
+                 alpha = float(_ask("Alpha (raw poison strength)", "1.0"))
+             if env_raw_attack == "IPM":
+@@ -5576,12 +5600,12 @@
+                 "Rounds to ramp stealth in after warmup (0 = no ramp)", "5"))
+             env_adaptive_stealth = _ask_bool(
+                 "Run defense oracle each round and back off if flagged", True)
+-            if env_adaptive_stealth:
++            if env_adaptive_stealth or env_raw_attack == "krum_optimal":
+                 env_active_defense = _ask_choice(
+                     "Active server defense for the local oracle",
+                     ["fedavg", "krum", "multi_krum", "median",
+                      "trimmed_mean", "bulyan", "flame", "auto"],
+-                    "flame",
++                    "krum" if env_raw_attack == "krum_optimal" else "flame",
+                 )
+             env_min_peers = int(_ask(
+                 "Minimum distinct peers before using a peer envelope", "2"))
+@@ -5993,13 +6017,22 @@
+             "peer_fingerprint.py unavailable while peer envelope is enabled: "
+             + str(_PEER_FINGERPRINT_IMPORT_ERROR or "unknown import error")
+         )
++
++    active = str(getattr(args, "live_active_defense", "flame") or "flame").lower()
++    raw_attack = str(getattr(args, "live_raw_attack", "") or "").lower()
++    if raw_attack == "krum_optimal" and active not in {"krum", "multi_krum"}:
++        errors.append(
++            "krum_optimal is defined for Krum or Multi-Krum selection, but "
++            f"live_active_defense={active!r}. Use a Krum/Multi-Krum server or choose "
++            "a FedAvg-appropriate poisoning attack."
++        )
++
+     if errors:
+         raise SystemExit(
+             "Envelope runtime preflight FAILED. Fix the active folder before running:\n- "
+             + "\n- ".join(errors)
+         )
+ 
+-    active = str(getattr(args, "live_active_defense", "flame") or "flame").lower()
+     if active == "auto":
+         logger.warning(
+             "[PREFLIGHT] live_active_defense=auto evaluates all oracle defenses; "
+===== validate_selection_attack_corrections.py (new) =====
+--- /dev/null	2026-07-18 20:33:47.104054478 +0000
++++ /mnt/data/poison_runtime_corrected/validate_selection_attack_corrections.py	2026-07-18 21:54:12.225854015 +0000
+@@ -0,0 +1,150 @@
++#!/usr/bin/env python3
++"""Focused regression checks for Min Sum, Krum Optimal, and peer round sync."""
++from __future__ import annotations
++
++import argparse
++import tempfile
++from pathlib import Path
++
++import numpy as np
++
++from peer_fingerprint import PeerFingerprintRegistry
++from selection_attacks import craft_min_sum, craft_selection_optimal, _pairwise_sq
++
++
++def check_min_sum_squared_geometry() -> None:
++    peers = np.asarray(
++        [
++            [1.0, 0.2, -0.1],
++            [0.9, 0.1, -0.2],
++            [1.1, 0.3, 0.0],
++            [0.95, 0.25, -0.15],
++        ],
++        dtype=np.float64,
++    )
++    candidate, info = craft_min_sum(peers, strength=1.0)
++    threshold = float(np.max(_pairwise_sq(peers).sum(axis=1)))
++    candidate_sum = float(np.sum((peers - candidate) ** 2))
++    assert info["boundary_distance_power"] == 2
++    assert candidate_sum <= threshold + 1e-8
++
++    half_candidate, half_info = craft_min_sum(peers, strength=0.5)
++    assert abs(half_info["gamma"] - 0.5 * half_info["gamma_boundary"]) < 1e-10
++    assert np.linalg.norm(half_candidate - peers.mean(axis=0)) <= np.linalg.norm(
++        candidate - peers.mean(axis=0)
++    ) + 1e-12
++
++
++def check_krum_strength_and_defense() -> None:
++    peers = np.asarray(
++        [
++            [1.0, 0.0],
++            [0.95, 0.05],
++            [1.05, -0.05],
++            [0.98, 0.02],
++        ],
++        dtype=np.float64,
++    )
++    full, full_info = craft_selection_optimal(
++        peers, f=1, selection_size=1, defense="krum", strength=1.0
++    )
++    half, half_info = craft_selection_optimal(
++        peers, f=1, selection_size=1, defense="krum", strength=0.5
++    )
++    assert full_info["feasible"] and half_info["feasible"]
++    assert abs(half_info["gamma"] - 0.5 * half_info["gamma_boundary"]) < 1e-10
++    assert np.linalg.norm(half - peers.mean(axis=0)) <= np.linalg.norm(
++        full - peers.mean(axis=0)
++    ) + 1e-12
++
++    _, invalid = craft_selection_optimal(peers, defense="fedavg")
++    assert not invalid["feasible"]
++    assert "unsupported_selection_defense" in invalid["reason"]
++
++
++def check_round_synchronization() -> None:
++    registry = PeerFingerprintRegistry(
++        window=5,
++        min_peers=2,
++        min_observations=2,
++        memory_budget_mb=16,
++        geometry_sketch_dim=16,
++        full_block_max_mb=16,
++    )
++    contract = "test-contract"
++    clients = ["peer-a", "peer-b", "peer-c"]
++
++    for round_id in (1, 2):
++        for index, client in enumerate(clients):
++            block = [np.full((4,), round_id + index / 10.0, dtype=np.float32)]
++            registry.observe(
++                client,
++                round_id,
++                block,
++                model_contract_sha256=contract,
++                observation_id=f"{client}:{round_id}",
++            )
++
++    # Only one peer has reached round 3. The registry must use round 2 rather
++    # than mixing round 3 with round 2 observations from other clients.
++    registry.observe(
++        clients[0],
++        3,
++        [np.full((4,), 3.0, dtype=np.float32)],
++        model_contract_sha256=contract,
++        observation_id=f"{clients[0]}:3",
++    )
++    matrix, info = registry.peer_full_matrix(
++        "target", contract, round_index=3, dtype=np.float32
++    )
++    assert matrix is not None and matrix.shape[0] == 3
++    assert info["peer_full_geometry_selected_round"] == 2
++    assert info["peer_full_geometry_round_source"] == "previous_complete_round"
++
++    for index, client in enumerate(clients[1:], start=1):
++        registry.observe(
++            client,
++            3,
++            [np.full((4,), 3.0 + index / 10.0, dtype=np.float32)],
++            model_contract_sha256=contract,
++            observation_id=f"{client}:3",
++        )
++    matrix, info = registry.peer_full_matrix(
++        "target", contract, round_index=3, dtype=np.float32
++    )
++    assert matrix is not None and matrix.shape[0] == 3
++    assert info["peer_full_geometry_selected_round"] == 3
++    assert info["peer_full_geometry_round_source"] == "exact_requested_round"
++
++
++def check_proxy_preflight() -> None:
++    import poison_live
++
++    args = argparse.Namespace(
++        live_poison=True,
++        live_attack="envelope",
++        live_raw_attack="krum_optimal",
++        live_active_defense="fedavg",
++        live_min_peers=2,
++        live_geometry_sketch_dim=128,
++        live_peer_memory_mb=16,
++        live_state_save_every=0,
++    )
++    try:
++        poison_live.validate_runtime_dependencies(args)
++    except SystemExit as exc:
++        assert "krum_optimal" in str(exc)
++    else:
++        raise AssertionError("FedAvg plus krum_optimal should fail preflight")
++
++
++def main() -> None:
++    check_min_sum_squared_geometry()
++    check_krum_strength_and_defense()
++    check_round_synchronization()
++    check_proxy_preflight()
++    print("PASS: selection attack corrections validated")
++
++
++if __name__ == "__main__":
++    main()

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 315.64" width="7.1667in" height="3.7701in">
+<rect x="0" y="0" width="600" height="315.64" fill="#FFFFFF"/>
+<text x="300.0" y="20.8" text-anchor="middle" font-size="12.79" font-weight="700" fill="#8A3D0A" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">[CNN · CIFAR-10]</text>
+<g transform="translate(0,35.64)">
+<line x1="60" y1="240.0" x2="540" y2="240.0" stroke="#DCE1E5" stroke-width="1"/>
+<text x="52" y="243.0" text-anchor="end" font-size="9.5" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">-1.0</text>
+<line x1="60" y1="185.0" x2="540" y2="185.0" stroke="#DCE1E5" stroke-width="1"/>
+<text x="52" y="188.0" text-anchor="end" font-size="9.5" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">-0.5</text>
+<line x1="60" y1="130.0" x2="540" y2="130.0" stroke="#DCE1E5" stroke-width="1"/>
+<text x="52" y="133.0" text-anchor="end" font-size="9.5" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">+0.0</text>
+<line x1="60" y1="75.0" x2="540" y2="75.0" stroke="#DCE1E5" stroke-width="1"/>
+<text x="52" y="78.0" text-anchor="end" font-size="9.5" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">+0.5</text>
+<line x1="60" y1="20.0" x2="540" y2="20.0" stroke="#DCE1E5" stroke-width="1"/>
+<text x="52" y="23.0" text-anchor="end" font-size="9.5" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">+1.0</text>
+<line x1="60" y1="130.0" x2="540" y2="130.0" stroke="#7C8791" stroke-width="1.2" stroke-dasharray="3,3"/>
+<text x="546" y="243.0" font-size="9" fill="#D03B3B" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">opposed</text>
+<text x="546" y="23.0" font-size="9" fill="#2A78D6" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">aligned</text>
+<circle cx="60.0" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="66.1" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="72.2" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="78.2" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="84.3" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="90.4" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="96.5" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="102.5" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="108.6" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="114.7" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="120.8" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="126.8" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="132.9" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="139.0" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="145.1" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="151.1" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="157.2" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="163.3" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="169.4" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="175.4" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="181.5" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="187.6" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="193.7" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="199.7" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="205.8" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="211.9" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="218.0" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="224.1" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="230.1" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="236.2" cy="20.0" r="4.5" fill="#2A78D6" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="242.3" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="248.4" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="254.4" cy="20.0" r="4.5" fill="#2A78D6" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="260.5" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="266.6" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="272.7" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="278.7" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="284.8" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="290.9" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="297.0" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="303.0" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="309.1" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="315.2" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="321.3" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="327.3" cy="20.0" r="4.5" fill="#2A78D6" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="333.4" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="339.5" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="345.6" cy="20.0" r="4.5" fill="#2A78D6" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="351.6" cy="20.0" r="4.5" fill="#2A78D6" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="357.7" cy="240.0" r="4.5" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="357.7" cy="20.0" r="4.5" fill="#2A78D6" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="369.9" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="375.9" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="382.0" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="388.1" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="388.1" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="400.3" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="406.3" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="412.4" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="412.4" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="424.6" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="430.6" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="436.7" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="436.7" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="448.9" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="454.9" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="461.0" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="467.1" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="473.2" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="479.2" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="485.3" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="491.4" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="497.5" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="503.5" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="509.6" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="515.7" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="521.8" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="527.8" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="533.9" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<circle cx="540.0" cy="240.0" r="3" fill="#D03B3B" stroke="#FCFCFC" stroke-width="1"/>
+<text x="300.0" y="270.0" text-anchor="middle" font-size="11" fill="#47525C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">FL round (target client, krum × min-max, CNN)</text>
+<text x="18.0" y="130.0" text-anchor="middle" font-size="11" fill="#47525C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" transform="rotate(-90 18.0 130.0)">cosine(crafted update, genuine peer mean)</text>
+</g>
+</svg>

@@ -1,0 +1,73 @@
+track,defense,condition,attack,n_runs,accuracy_pct,precision_pct,f1_score_pct,validity
+RNN,FedAvg,baseline,,5,78.33,79.65,78.46,valid_baseline
+RNN,Krum,baseline,,5,62.61,67.24,62.91,valid_baseline
+RNN,Multi-Krum,baseline,,5,76.73,78.70,77.10,valid_baseline
+RNN,Median,baseline,,5,77.22,78.89,77.49,valid_baseline
+RNN,Trimmed-Mean,baseline,,5,76.76,78.42,77.04,valid_baseline
+RNN,FLAME,baseline,,5,72.97,75.92,73.04,valid_baseline
+RNN,FedAvg,attack,Sign Flip,1,76.15,77.67,76.44,pending
+RNN,FedAvg,attack,Scale,1,75.20,75.92,75.24,valid_attack
+RNN,FedAvg,attack,Noise,1,82.25,82.85,82.39,anomalous
+RNN,FedAvg,attack,Min-Max,1,63.22,65.65,62.13,valid_attack
+RNN,FedAvg,attack,Min-Sum,1,67.59,71.12,67.79,valid_attack
+RNN,Krum,attack,Sign Flip,1,42.35,53.60,41.72,valid_attack
+RNN,Krum,attack,Scale,1,67.25,71.00,67.37,anomalous
+RNN,Krum,attack,Noise,1,68.92,71.90,68.95,anomalous
+RNN,Krum,attack,Min-Max,1,39.53,46.36,37.89,valid_attack
+RNN,Krum,attack,Min-Sum,1,34.85,47.09,32.93,valid_attack
+RNN,Multi-Krum,attack,Sign Flip,1,70.99,76.25,71.58,valid_attack
+RNN,Multi-Krum,attack,Scale,1,79.44,81.15,79.65,anomalous
+RNN,Multi-Krum,attack,Noise,1,71.22,74.03,71.55,valid_attack
+RNN,Multi-Krum,attack,Min-Max,1,63.62,66.51,63.28,valid_attack
+RNN,Multi-Krum,attack,Min-Sum,1,61.05,64.96,61.06,valid_attack
+RNN,Median,attack,Sign Flip,1,75.36,76.54,75.65,diagnostic_only
+RNN,Median,attack,Scale,1,77.47,79.34,77.73,pending
+RNN,Median,attack,Noise,1,79.06,80.03,79.15,diagnostic_only
+RNN,Median,attack,Min-Max,1,68.07,71.13,68.67,valid_attack
+RNN,Median,attack,Min-Sum,1,66.92,69.05,67.22,valid_attack
+RNN,Trimmed-Mean,attack,Sign Flip,1,71.70,73.63,71.97,valid_attack
+RNN,Trimmed-Mean,attack,Scale,1,81.13,82.71,81.43,anomalous
+RNN,Trimmed-Mean,attack,Noise,1,81.47,82.07,81.63,anomalous
+RNN,Trimmed-Mean,attack,Min-Max,1,62.91,66.18,63.31,valid_attack
+RNN,Trimmed-Mean,attack,Min-Sum,1,65.02,67.37,65.31,valid_attack
+RNN,FLAME,attack,Sign Flip,1,55.11,62.63,54.42,valid_attack
+RNN,FLAME,attack,Scale,2,73.96,76.04,74.05,diagnostic_only
+RNN,FLAME,attack,Noise,2,75.36,77.29,75.26,pending
+RNN,FLAME,attack,Min-Max,1,63.90,66.97,63.81,valid_attack
+RNN,FLAME,attack,Min-Sum,1,64.44,68.65,64.52,pending
+CNN,FedAvg,baseline,,2,65.07,64.91,64.55,valid_baseline
+CNN,Krum,baseline,,2,60.07,60.62,59.56,valid_baseline
+CNN,Multi-Krum,baseline,,2,64.38,64.40,63.86,valid_baseline
+CNN,Median,baseline,,2,61.71,61.72,61.27,valid_baseline
+CNN,Trimmed-Mean,baseline,,2,63.93,64.04,63.43,valid_baseline
+CNN,FLAME,baseline,,2,63.37,63.77,63.17,valid_baseline
+CNN,FedAvg,attack,Sign Flip,1,61.71,62.06,61.21,valid_attack
+CNN,FedAvg,attack,Scale,1,65.49,65.11,65.01,anomalous
+CNN,FedAvg,attack,Noise,1,66.48,66.33,65.95,anomalous
+CNN,FedAvg,attack,Min-Max,2,59.66,59.31,59.10,valid_attack
+CNN,FedAvg,attack,Min-Sum,1,62.39,61.78,61.72,valid_attack
+CNN,Krum,attack,Sign Flip,1,52.39,53.18,51.80,valid_attack
+CNN,Krum,attack,Scale,1,62.71,63.14,61.90,anomalous
+CNN,Krum,attack,Noise,1,63.35,63.81,63.12,anomalous
+CNN,Krum,attack,Min-Max,1,39.65,47.52,39.60,valid_attack
+CNN,Krum,attack,Min-Sum,1,44.70,44.64,43.94,valid_attack
+CNN,Multi-Krum,attack,Sign Flip,1,60.57,60.28,59.97,valid_attack
+CNN,Multi-Krum,attack,Scale,1,65.58,65.80,65.18,anomalous
+CNN,Multi-Krum,attack,Noise,1,64.73,64.74,64.24,anomalous
+CNN,Multi-Krum,attack,Min-Max,1,59.86,59.77,58.90,valid_attack
+CNN,Multi-Krum,attack,Min-Sum,1,60.36,59.89,59.82,valid_attack
+CNN,Median,attack,Sign Flip,1,60.75,60.32,60.21,valid_attack
+CNN,Median,attack,Scale,1,65.08,64.79,64.52,anomalous
+CNN,Median,attack,Noise,1,65.00,64.97,64.82,anomalous
+CNN,Median,attack,Min-Max,1,59.80,59.46,59.07,valid_attack
+CNN,Median,attack,Min-Sum,1,58.56,57.98,57.86,valid_attack
+CNN,Trimmed-Mean,attack,Sign Flip,1,61.69,61.67,61.50,valid_attack
+CNN,Trimmed-Mean,attack,Scale,1,64.52,64.32,64.19,anomalous
+CNN,Trimmed-Mean,attack,Noise,1,64.64,64.24,63.95,anomalous
+CNN,Trimmed-Mean,attack,Min-Max,1,57.62,58.19,57.05,valid_attack
+CNN,Trimmed-Mean,attack,Min-Sum,1,59.60,59.20,59.08,valid_attack
+CNN,FLAME,attack,Sign Flip,1,64.15,64.24,63.65,anomalous
+CNN,FLAME,attack,Scale,1,64.75,64.28,64.26,anomalous
+CNN,FLAME,attack,Noise,2,62.33,63.28,61.84,valid_attack
+CNN,FLAME,attack,Min-Max,1,62.60,62.88,62.31,valid_attack
+CNN,FLAME,attack,Min-Sum,1,63.69,63.32,63.23,pending

@@ -1,0 +1,1580 @@
+severity,scope,bundle_id,message
+info,RQ1,bundle_0001,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0001,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0002,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0002,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0002,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0003,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0003,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0004,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0004,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0005,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0005,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0006,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0006,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0007,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0007,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0007,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0008,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0008,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0009,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0009,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0010,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0010,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0011,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0011,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0011,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0012,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0012,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0013,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0013,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0014,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0014,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0015,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0015,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0016,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0016,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0016,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0017,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0017,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0018,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0018,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0019,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0019,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0020,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0020,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0021,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0021,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0022,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0022,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0022,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0023,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0023,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0024,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0024,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0025,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0025,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0026,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0026,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0026,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0027,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0027,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0027,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0028,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0028,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0029,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0029,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0030,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0030,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0031,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0031,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0032,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0032,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0033,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0033,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0034,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0034,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0035,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0035,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0036,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0036,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0036,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0037,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0037,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0038,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0038,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0039,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0039,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0040,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0040,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0041,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0041,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0041,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0042,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0042,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0043,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0043,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0044,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0044,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0045,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0045,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0046,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0046,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0046,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0047,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0047,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0048,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0048,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0049,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0049,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0050,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0050,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0051,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0051,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0052,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0052,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0052,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0053,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0053,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0054,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0054,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0055,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0055,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0056,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0056,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0057,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0057,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0057,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0058,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0058,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0058,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0059,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0059,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0060,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0060,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0061,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0061,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0062,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0062,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0063,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0063,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0064,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0064,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0065,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0065,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0066,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0066,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0066,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0067,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0067,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0068,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0068,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0069,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0069,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0070,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0070,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0071,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0071,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0071,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0072,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0072,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0073,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0073,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0074,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0074,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0075,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0075,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0076,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0076,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0077,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0077,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0077,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0078,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0078,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0079,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0079,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0080,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0080,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0081,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0081,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0082,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0082,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0083,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0083,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0083,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0084,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0084,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0084,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0085,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0085,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0086,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0086,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0087,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0087,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0088,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0088,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0089,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0089,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0090,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0090,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0091,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0091,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0092,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0092,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0093,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0093,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0093,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0094,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0094,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0094,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0095,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0095,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0096,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0096,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0097,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0097,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0098,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0098,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0099,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0099,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0100,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0100,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0101,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0101,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0101,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0102,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0102,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0103,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0103,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0104,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0104,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0104,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0105,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0105,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0106,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0106,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0107,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0107,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0108,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0108,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0109,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0109,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0110,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0110,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0111,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0111,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0111,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0112,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0112,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0113,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0113,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0114,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0114,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0115,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0115,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0116,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0116,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0117,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0117,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0118,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0118,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0119,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0119,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0119,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0120,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0120,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0120,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0121,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0121,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0121,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0122,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0122,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0123,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0123,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0123,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0124,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0124,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0125,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0125,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0125,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0126,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0126,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0127,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0127,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0128,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0128,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0129,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0129,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0130,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0130,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0131,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0131,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0132,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0132,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0133,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0133,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0134,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0134,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0135,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0135,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0136,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0136,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0137,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0137,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0138,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0138,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0139,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0139,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0140,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0140,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0141,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0141,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0142,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0142,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0142,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0143,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0143,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0144,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0144,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0145,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0145,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0146,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0146,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0147,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0147,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0147,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0148,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0148,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0149,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0149,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0150,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0150,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0151,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0151,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0152,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0152,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0153,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0153,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0153,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0154,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0154,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0155,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0155,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0156,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0156,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0157,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0157,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0158,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0158,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0159,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0159,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0159,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0160,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0160,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0161,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0161,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0162,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0162,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0163,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0163,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0164,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0164,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0165,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0165,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0165,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0166,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0166,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0167,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0167,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0168,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0168,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0169,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0169,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ3,bundle_0169,No modified proxy updates were logged.
+error,evaluation,bundle_0169,KeyError: 'attack_ground_truth'
+info,RQ1,bundle_0170,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0170,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0171,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0171,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0172,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0172,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0172,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0173,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0173,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0174,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0174,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0175,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0175,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0176,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0176,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0177,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0177,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0178,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0178,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0178,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0179,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0179,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0180,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0180,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0181,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0181,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0182,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0182,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0183,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0183,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0184,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0184,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0185,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0185,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0186,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0186,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0187,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0187,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0188,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0188,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0188,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0189,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0189,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0189,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0190,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0190,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0190,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0191,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0191,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0192,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0192,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0193,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0193,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0194,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0194,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0195,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0195,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0196,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0196,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0197,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0197,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0198,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0198,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0199,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0199,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0200,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0200,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+error,evaluation,bundle_0200,KeyError: 'attack_ground_truth'
+info,RQ1,bundle_0201,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0201,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0202,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0202,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0203,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0203,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0204,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0204,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0204,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0205,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0205,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0206,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0206,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0207,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0207,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0208,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0208,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0209,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0209,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0210,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0210,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0211,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0211,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0212,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0212,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0212,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0213,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0213,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0213,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0214,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0214,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0215,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0215,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0216,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0216,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0217,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0217,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0218,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0218,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0219,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0219,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0220,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0220,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0221,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0221,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0222,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0222,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0222,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0223,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0223,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0224,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0224,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0225,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0225,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0226,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0226,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0227,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0227,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0228,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0228,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0228,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0229,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0229,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0230,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0230,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0231,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0231,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0232,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0232,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0233,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0233,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0234,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0234,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0235,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0235,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0236,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0236,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0236,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0237,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0237,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0237,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0238,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0238,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0239,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0239,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0240,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0240,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0241,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0241,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0242,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0242,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0243,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0243,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0244,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0244,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0245,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0245,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0245,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0246,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0246,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0247,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0247,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0248,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0248,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0249,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0249,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0250,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0250,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0251,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0251,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0251,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0252,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0252,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0253,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0253,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0254,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0254,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0255,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0255,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0256,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0256,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0257,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0257,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0258,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0258,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0258,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0259,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0259,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0259,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0260,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0260,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0261,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0261,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0262,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0262,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0263,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0263,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0264,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0264,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0265,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0265,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0266,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0266,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0267,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0267,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0268,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0268,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0269,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0269,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0270,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0270,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0270,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0271,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0271,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0271,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0272,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0272,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0273,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0273,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0274,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0274,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0275,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0275,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0276,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0276,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0277,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0277,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0278,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0278,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0279,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0279,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0280,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0280,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0280,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0281,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0281,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0282,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0282,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0283,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0283,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0284,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0284,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0285,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0285,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0286,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0286,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0286,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0287,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0287,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0288,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0288,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0289,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0289,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0290,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0290,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0291,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0291,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0292,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0292,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0292,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0293,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0293,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0294,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0294,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0295,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0295,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0296,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0296,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+error,evaluation,bundle_0296,KeyError: 'attack_ground_truth'
+info,RQ1,bundle_0297,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0297,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0298,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0298,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0299,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0299,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0300,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0300,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0301,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0301,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0302,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0302,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0303,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0303,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0304,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0304,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0304,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0305,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0305,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0306,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0306,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0307,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0307,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0308,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0308,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0309,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0309,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0310,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0310,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0310,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0311,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0311,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0312,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0312,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0313,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0313,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0314,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0314,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0315,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0315,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0316,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0316,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0316,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0317,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0317,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0318,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0318,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0319,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0319,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+warning,RQ1,bundle_0320,No explicit predicted client fingerprint field was found. Flow IP identity is not treated as classifier output.
+warning,RQ2,bundle_0320,Upload timing uses client serialization intervals rather than independent wire transfer intervals.
+info,RQ3,bundle_0320,No modified proxy updates were logged.
+error,evaluation,bundle_0320,KeyError: 'attack_ground_truth'
+info,RQ1,bundle_0321,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0321,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0321,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0322,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0322,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0322,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0323,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0323,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0323,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0324,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0324,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0324,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0325,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0325,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0325,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0326,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0326,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0326,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0327,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0327,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0327,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0328,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0328,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0328,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0329,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0329,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0330,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0330,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0331,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0331,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0331,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0332,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0332,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0332,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0333,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0333,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0334,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0334,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0335,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0335,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0336,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0336,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0337,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0337,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0338,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0338,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0339,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0339,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0340,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0340,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0341,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0341,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0342,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0342,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0343,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0343,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0343,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0344,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0344,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0344,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0345,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0345,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0345,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0346,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0346,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0347,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0347,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0348,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0348,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0349,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0349,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0350,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0350,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0351,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0351,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0352,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0352,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0353,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0353,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0354,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0354,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0355,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0355,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0356,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0356,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0357,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0357,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0358,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0358,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0359,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0359,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0360,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0360,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0360,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0361,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0361,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0362,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0362,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0363,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0363,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0364,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0364,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0365,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0365,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0366,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0366,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0366,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0367,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0367,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0368,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0368,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0369,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0369,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0370,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0370,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0371,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0371,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0372,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0372,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0373,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0373,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0374,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0374,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0374,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0375,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0375,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0375,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0376,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0376,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0377,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0377,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0378,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0378,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0379,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0379,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0380,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0380,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0381,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0381,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0382,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0382,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0383,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0383,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0384,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0384,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0385,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0385,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0386,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0386,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0387,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0387,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0387,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0388,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0388,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0388,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0389,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0389,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0389,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0390,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0390,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0390,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0391,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0391,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0392,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0392,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0393,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0393,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0394,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0394,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0395,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0395,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0396,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0396,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0397,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0397,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0398,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0398,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0399,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0399,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0400,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0400,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+warning,RQ4,bundle_0400,Proxy and server files were bundled but no round and client identities joined.
+info,RQ1,bundle_0401,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0401,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0402,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0402,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0403,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0403,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0404,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0404,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0405,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0405,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0405,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0406,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0406,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0406,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0407,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0407,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0408,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0408,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0409,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0409,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0410,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0410,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0411,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0411,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0412,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0412,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0413,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0413,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0414,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0414,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0415,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0415,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0416,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0416,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0416,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0417,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0417,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0417,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0418,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0418,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0419,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0419,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0420,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0420,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0421,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0421,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0422,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0422,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0423,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0423,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0424,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0424,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0425,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0425,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0426,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0426,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0426,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0427,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0427,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0428,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0428,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0429,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0429,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0430,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0430,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0431,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0431,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0432,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0432,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0433,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0433,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+warning,RQ4,bundle_0433,Proxy and server files were bundled but no round and client identities joined.
+info,RQ1,bundle_0434,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0434,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+warning,RQ4,bundle_0434,Proxy and server files were bundled but no round and client identities joined.
+info,RQ1,bundle_0435,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0435,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+warning,RQ4,bundle_0435,Proxy and server files were bundled but no round and client identities joined.
+info,RQ1,bundle_0436,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0436,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+warning,RQ4,bundle_0436,Proxy and server files were bundled but no round and client identities joined.
+info,RQ1,bundle_0437,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0437,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+warning,RQ4,bundle_0437,Proxy and server files were bundled but no round and client identities joined.
+info,RQ1,bundle_0438,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0438,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0439,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0439,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0440,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0440,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0441,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0441,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0442,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0442,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0443,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0443,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0444,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0444,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0444,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0445,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0445,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0445,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0446,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0446,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0446,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0447,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0447,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+error,evaluation,bundle_0447,KeyError: 'attack_ground_truth'
+info,RQ1,bundle_0448,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0448,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+error,evaluation,bundle_0448,KeyError: 'attack_ground_truth'
+info,RQ1,bundle_0449,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0449,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+error,evaluation,bundle_0449,KeyError: 'attack_ground_truth'
+info,RQ1,bundle_0450,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0450,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+error,evaluation,bundle_0450,KeyError: 'attack_ground_truth'
+info,RQ1,bundle_0451,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0451,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+error,evaluation,bundle_0451,KeyError: 'attack_ground_truth'
+info,RQ1,bundle_0452,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0452,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+error,evaluation,bundle_0452,KeyError: 'attack_ground_truth'
+info,RQ1,bundle_0453,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0453,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+error,evaluation,bundle_0453,KeyError: 'attack_ground_truth'
+info,RQ1,bundle_0454,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0454,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0455,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0455,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0456,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0456,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0457,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0457,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0458,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0458,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0458,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0459,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0459,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0459,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0460,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0460,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+error,evaluation,bundle_0460,KeyError: 'attack_ground_truth'
+info,RQ1,bundle_0461,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0461,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+error,evaluation,bundle_0461,KeyError: 'attack_ground_truth'
+info,RQ1,bundle_0462,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0462,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0463,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0463,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0463,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0464,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0464,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0465,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0465,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0466,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0466,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0467,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0467,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0467,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0468,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0468,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0469,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0469,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0470,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0470,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0471,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0471,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0471,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0472,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0472,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0473,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0473,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0474,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0474,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0475,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0475,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0475,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0476,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0476,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0477,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0477,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0478,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0478,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0479,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0479,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0479,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0480,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0480,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0481,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0481,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0482,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0482,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0482,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0483,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0483,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0484,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0484,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0485,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0485,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0486,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0486,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0487,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0487,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0487,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0488,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0488,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0489,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0489,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0490,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0490,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0491,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0491,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0491,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0492,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0492,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0493,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0493,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0494,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0494,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0495,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0495,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0495,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0496,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0496,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0497,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0497,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0498,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0498,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0499,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0499,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0499,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0500,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0500,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0501,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0501,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0502,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0502,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0503,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0503,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0503,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0504,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0504,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0505,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0505,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0506,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0506,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0507,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0507,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0507,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0508,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0508,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0509,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0509,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0510,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0510,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0511,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0511,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0512,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0512,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0512,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0513,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0513,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0514,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0514,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0515,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0515,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0516,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0516,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0517,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0517,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0518,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0518,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0519,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0519,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0519,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0520,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0520,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0520,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0521,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0521,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0522,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0522,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0523,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0523,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0524,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0524,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0525,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0525,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0526,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0526,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0527,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0527,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0527,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0528,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0528,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0529,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0529,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0530,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0530,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0530,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0531,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0531,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0532,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0532,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0533,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0533,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0534,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0534,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0535,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0535,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0536,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0536,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0537,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0537,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0537,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0538,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0538,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0539,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0539,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0540,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0540,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0541,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0541,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0542,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0542,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0542,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0543,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0543,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0544,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0544,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0545,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0545,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0546,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0546,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0547,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0547,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0547,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0548,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0548,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0549,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0549,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0550,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0550,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0551,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0551,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0552,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0552,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0552,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0553,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0553,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0554,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0554,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0555,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0555,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0556,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0556,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0557,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0557,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0557,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0558,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0558,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0559,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0559,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0560,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0560,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0561,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0561,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0562,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0562,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0562,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0563,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0563,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0564,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0564,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0565,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0565,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0566,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0566,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0567,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0567,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0567,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0568,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0568,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0569,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0569,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0570,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0570,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0571,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0571,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0572,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0572,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0572,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0573,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0573,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0574,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0574,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+warning,RQ1,bundle_0575,No explicit predicted client fingerprint field was found. Flow IP identity is not treated as classifier output.
+warning,RQ2,bundle_0575,Upload timing uses client serialization intervals rather than independent wire transfer intervals.
+error,evaluation,bundle_0575,KeyError: 'attack_ground_truth'
+info,RQ1,bundle_0576,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0576,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0577,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0577,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0578,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0578,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0578,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0579,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0579,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0580,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0580,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0581,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0581,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0582,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0582,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0583,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0583,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0583,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0584,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0584,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0585,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0585,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0586,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0586,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0587,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0587,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0588,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0588,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0588,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0589,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0589,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0590,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0590,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0591,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0591,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0592,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0592,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0593,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0593,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0593,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0594,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0594,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0595,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0595,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0596,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0596,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0597,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0597,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0598,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0598,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0598,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0599,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0599,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0600,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0600,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0601,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0601,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0602,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0602,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0603,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0603,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0603,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0604,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0604,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0605,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0605,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0606,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0606,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0607,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0607,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0608,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0608,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0608,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0609,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0609,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0610,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0610,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0611,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0611,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0612,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0612,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0613,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0613,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0613,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0614,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0614,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0615,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0615,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+warning,RQ1,bundle_0616,No explicit predicted client fingerprint field was found. Flow IP identity is not treated as classifier output.
+warning,RQ2,bundle_0616,Upload timing uses client serialization intervals rather than independent wire transfer intervals.
+error,evaluation,bundle_0616,KeyError: 'attack_ground_truth'
+info,RQ1,bundle_0617,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0617,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0618,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0618,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0619,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0619,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0619,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0620,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0620,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0621,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0621,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0622,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0622,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0623,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0623,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0624,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0624,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0624,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0625,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0625,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0626,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0626,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0627,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0627,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0628,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0628,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0629,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0629,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0629,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0630,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0630,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0631,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0631,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0632,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0632,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0633,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0633,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0634,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0634,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0634,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0635,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0635,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0636,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0636,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0637,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0637,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0638,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0638,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0639,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0639,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0639,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0640,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0640,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0641,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0641,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0642,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0642,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0643,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0643,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0644,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0644,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0644,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0645,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0645,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0646,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0646,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+warning,RQ1,bundle_0647,No explicit predicted client fingerprint field was found. Flow IP identity is not treated as classifier output.
+warning,RQ2,bundle_0647,Upload timing uses client serialization intervals rather than independent wire transfer intervals.
+error,evaluation,bundle_0647,KeyError: 'attack_ground_truth'
+warning,RQ1,bundle_0648,No explicit predicted client fingerprint field was found. Flow IP identity is not treated as classifier output.
+warning,RQ2,bundle_0648,Upload timing uses client serialization intervals rather than independent wire transfer intervals.
+info,RQ1,bundle_0649,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0649,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0650,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0650,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0651,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0651,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0652,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0652,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0653,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0653,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0654,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0654,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0655,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0655,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0656,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0656,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0657,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0657,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0658,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0658,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0659,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0659,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0660,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0660,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0661,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0661,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0662,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0662,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0663,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0663,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0664,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0664,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0665,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0665,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0666,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0666,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0667,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0667,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0668,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0668,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0669,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0669,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0670,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0670,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0671,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0671,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0672,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0672,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0672,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0673,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0673,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0674,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0674,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0675,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0675,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0676,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0676,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0677,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0677,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0678,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0678,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0679,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0679,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0680,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0680,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0681,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0681,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0682,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0682,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0683,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0683,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0684,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0684,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0685,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0685,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0686,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0686,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0687,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0687,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0688,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0688,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0689,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0689,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0690,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0690,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0691,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0691,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0692,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0692,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0693,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0693,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0694,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0694,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0695,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0695,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0696,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0696,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0697,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0697,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0698,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0698,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0699,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0699,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0700,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0700,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0701,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0701,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0702,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0702,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0703,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0703,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0704,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0704,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0705,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0705,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0706,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0706,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ1,bundle_0707,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0707,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0707,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0708,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0708,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0708,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0709,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0709,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0709,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0710,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0710,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0710,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."
+info,RQ1,bundle_0711,Phase confusion requires matched analyzer decision and client metric files.
+info,RQ2,bundle_0711,Exact trigger precision and recall require a matched analyzer or proxy run and client upload ground truth.
+info,RQ4,bundle_0711,"Server defense diagnostics are available, but malicious admission metrics require a matched proxy ground truth file."

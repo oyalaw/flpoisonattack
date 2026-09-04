@@ -1,0 +1,7 @@
+Model,Condition,N_experiments,Round Tracking Quality
+RNN,Baseline,30,0.977 ± 0.049
+RNN,Attack,32,0.872 ± 0.071
+CNN,Baseline,12,1.000 ± 0.000
+CNN,Attack,32,0.996 ± 0.006
+Autoencoder,Baseline,11,1.000 ± 0.000
+Autoencoder,Attack,31,0.992 ± 0.005

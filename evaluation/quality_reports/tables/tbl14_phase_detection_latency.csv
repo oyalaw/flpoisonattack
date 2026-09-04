@@ -1,0 +1,7 @@
+Model,Condition,N_experiments,Decision Lag (ms)
+RNN,Baseline,0,N/A
+RNN,Attack,31,28.294 ± 14.374
+CNN,Baseline,0,N/A
+CNN,Attack,32,298.367 ± 68.825
+Autoencoder,Baseline,1,587.363 ± 0.000
+Autoencoder,Attack,29,401.329 ± 31.407

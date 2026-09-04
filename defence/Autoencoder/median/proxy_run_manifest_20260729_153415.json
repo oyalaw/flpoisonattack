@@ -1,0 +1,196 @@
+{
+  "timestamp": "2026-07-29T20:11:04Z",
+  "status": "completed",
+  "error": null,
+  "started_at_epoch_s": 1785353679.2623487,
+  "ended_at_epoch_s": 1785355864.3475132,
+  "duration_s": 2185.0851652622223,
+  "experiment_id": "exp_1785353495",
+  "run_id": "run_1785353495",
+  "condition": "",
+  "proxy_run_id": "proxy_1785353679",
+  "canonical_update_hash_scheme": "fl_ndarray_bundle_sha256_v1",
+  "model_contract_hash_scheme": "fl_tensor_contract_sha256_v1",
+  "transport_architecture_policy": "dynamic_tensor_contract_plus_adaptive_disk_spool_plus_balanced_http2_flow_credit",
+  "configuration": {
+    "interface": "wlo1",
+    "listen_host": "0.0.0.0",
+    "proxy_port": 9090,
+    "target_server_ip": "10.42.0.195",
+    "target_server_port": 8080,
+    "client_subnet": "10.42.0.0/24",
+    "protocol": "auto",
+    "max_message_mb": 0,
+    "hard_max_message_gb": 8.0,
+    "spool_threshold_mb": 32,
+    "spool_dir": ".proxy_spool/proxy_1785353679",
+    "spool_disk_reserve_mb": 1024,
+    "adaptive_flow_control": true,
+    "capture_streams": true,
+    "capture_dir": "captures_live_poison",
+    "experiment_id": "exp_1785353495",
+    "run_id": "run_1785353495",
+    "condition": "",
+    "proxy_run_id": "proxy_1785353679",
+    "attack_event_log": "proxy_attack_events_20260729_153415.csv",
+    "phase_gate_enabled": true,
+    "phase_gate_min_confidence": 0.85,
+    "phase_gate_max_age_s": 90.0,
+    "phase_gate_ignore_age": false,
+    "phase_gate_require_client": true,
+    "phase_gate_reject_sources": "server_announce",
+    "require_update_space": true,
+    "global_model_max_age_s": 600.0,
+    "require_global_round_match": false,
+    "download_phase_min_confidence": 0.7,
+    "model_cache_entries_per_client": 12,
+    "model_cache_memory_mb": 128,
+    "model_cache_dir": ".proxy_model_cache/proxy_1785353679",
+    "model_cache_disk_gb": 20.0,
+    "update_sparsity_epsilon": 1e-08,
+    "live_poison": true,
+    "live_attack": "envelope",
+    "live_alpha": 0.5,
+    "live_clip_ratio": 0.3,
+    "live_sigma": 0.01,
+    "live_seed": 1234,
+    "live_start_message": 0,
+    "live_end_message": -1,
+    "live_warmup": 20,
+    "live_warmup_rounds": 0,
+    "live_aggressiveness": 0.5,
+    "live_raw_attack": "sign_flip",
+    "live_k_coord": 3.0,
+    "live_k_norm": 3.0,
+    "live_window": 5,
+    "live_ramp_rounds": 5,
+    "live_adaptive_stealth": true,
+    "live_backoff_step": 0.1,
+    "live_min_peers": 2,
+    "live_peer_min_obs": 3,
+    "live_derived_f": 1,
+    "live_multi_krum_m": 1,
+    "live_trimmed_beta": 0.1,
+    "live_flame_cosine_threshold": 0.1,
+    "live_active_defense": "median",
+    "live_geometry_sketch_dim": 8192,
+    "live_peer_memory_mb": 512,
+    "live_peer_full_block_max_mb": 16,
+    "live_state_save_every": 0,
+    "live_large_model_float32_threshold_elements": 2000000,
+    "live_engine_cache_dir": ".stealth_engine_cache/proxy_1785353679",
+    "live_engine_disk_threshold_mb": 256.0,
+    "live_large_model_adaptive_backoff_steps": 0,
+    "non_target_observation_queue_frames": null,
+    "poison_clients": "10.42.0.210",
+    "poison_target_mode": "static",
+    "live_envelope_state": "",
+    "reset_envelope_state": true,
+    "repair_preexisting_flows": true,
+    "abort_on_preexisting_flows": true,
+    "resource_log_interval_s": 1.0
+  },
+  "runtime_environment": {
+    "python_version": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "python_executable": "/usr/bin/python3",
+    "platform": "Linux-6.17.0-35-generic-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "hostname": "lawrence-Latitude-5400",
+    "pid": 800034,
+    "dependencies": {
+      "flwr": "unavailable",
+      "numpy": "1.26.4",
+      "torch": "unavailable",
+      "torchvision": "unavailable",
+      "scikit-learn": "unavailable",
+      "hdbscan": "unavailable",
+      "psutil": "5.9.8",
+      "redis": "4.3.4",
+      "jetson-stats": "unavailable",
+      "scipy": "1.11.4",
+      "pandas": "2.1.4+dfsg"
+    },
+    "clock": {
+      "host": "lawrence-Latitude-5400",
+      "timezone": "EST",
+      "utc_offset_seconds": -18000,
+      "captured_at_epoch_ns": 1785355864352160841,
+      "captured_at_utc": "2026-07-29T20:11:04Z",
+      "ntp_synchronized": true,
+      "clock_source": "timedatectl",
+      "clock_offset_ms": null
+    },
+    "reproducibility": {
+      "proxy_live_seed": 1234
+    }
+  },
+  "runtime_preflight": {
+    "array_contract_available": true,
+    "stealth_engine_available": true,
+    "stealth_import_error": "",
+    "peer_fingerprint_available": true,
+    "peer_fingerprint_import_error": ""
+  },
+  "code_fingerprints": {
+    "poison_live.py": {
+      "path": "/home/lawrence/Lawrence/FL_poison/poison_live.py",
+      "sha256": "6663d9dd0f860384e9ee3afdd75c5d10eb6dd0dcd49ce00a94401ac83b353e0d"
+    },
+    "analyzer.py": {
+      "path": "/home/lawrence/Lawrence/FL_poison/analyzer.py",
+      "sha256": "c083828b2b5305d3113b153a0f16c9cec9bd1623f686e81e46d498cb0785b788"
+    },
+    "stealth_engine.py": {
+      "path": "/home/lawrence/Lawrence/FL_poison/stealth_engine.py",
+      "sha256": "19cc117998acef9612ad8ef5315a1f1dc5af891cf4bea570bfb43c5e5d5da621"
+    },
+    "stealth_projection.py": {
+      "path": "/home/lawrence/Lawrence/FL_poison/stealth_projection.py",
+      "sha256": "b37804f0dcbf6c4e214e00f77902cb3b532945885e27c0ae872732df74ce0218"
+    },
+    "defense_oracle.py": {
+      "path": "/home/lawrence/Lawrence/FL_poison/defense_oracle.py",
+      "sha256": "e2a0ca647646385e268b50c6941acd6d7773735c77370db0926c95fb47b85d99"
+    },
+    "selection_attacks.py": {
+      "path": "/home/lawrence/Lawrence/FL_poison/selection_attacks.py",
+      "sha256": "24e8ec23554ac870e0c1c9bbfcd5cf599988ade7e02a3bba03ff0e835b662cf0"
+    },
+    "peer_fingerprint.py": {
+      "path": "/home/lawrence/Lawrence/FL_poison/peer_fingerprint.py",
+      "sha256": "16840f6344497013182837095ddb15a86a9cce9310100dbaaa851518aa426b4c"
+    },
+    "envelope.py": {
+      "path": "/home/lawrence/Lawrence/FL_poison/envelope.py",
+      "sha256": "ed9e401f383409843e4004f6d2972777de740570490ced86e8905066918b15e1"
+    },
+    "array_contract.py": {
+      "path": "/home/lawrence/Lawrence/FL_poison/array_contract.py",
+      "sha256": "6260899d5fbca93601ce28100f175b3917eb877584788a8af685cdccc5f14f60"
+    },
+    "experiment_integrity.py": {
+      "path": "/home/lawrence/Lawrence/FL_poison/experiment_integrity.py",
+      "sha256": "7de26bd900b13df4af93d6e77d87a0c13e19f9528974f44b5ff180de85bf2215"
+    },
+    "model_agnostic_support.py": {
+      "path": "/home/lawrence/Lawrence/FL_poison/model_agnostic_support.py",
+      "sha256": "4a4a594e5df7b618b05bb5ee46a228159fa1028cd49db84ff9afca8cebb0b876"
+    }
+  },
+  "envelope_state": {
+    "before_reset": {
+      "configured_path": null,
+      "files": {}
+    },
+    "current": {
+      "configured_path": null,
+      "files": {}
+    },
+    "reset_at_start": true
+  },
+  "outputs": {
+    "attack_event_log": "/home/lawrence/Lawrence/FL_poison/proxy_attack_events_20260729_153415.csv",
+    "resource_log": "/home/lawrence/Lawrence/FL_poison/proxy_resource_log_20260729_153415.csv"
+  }
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 359.20" width="7.1667in" height="3.9004in">
+<rect x="0" y="0" width="660" height="359.20" fill="#FFFFFF"/>
+<text x="330.0" y="22.9" text-anchor="middle" font-size="14.07" font-weight="700" fill="#3F1D5C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">[RNN &amp; CNN]</text>
+<g transform="translate(0,39.20)">
+<line x1="60" y1="280.0" x2="660" y2="280.0" stroke="#DCE1E5" stroke-width="1"/>
+<text x="52" y="283.0" text-anchor="end" font-size="9.5" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">90%</text>
+<line x1="60" y1="150.0" x2="660" y2="150.0" stroke="#DCE1E5" stroke-width="1"/>
+<text x="52" y="153.0" text-anchor="end" font-size="9.5" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">95%</text>
+<line x1="60" y1="20.0" x2="660" y2="20.0" stroke="#DCE1E5" stroke-width="1"/>
+<text x="52" y="23.0" text-anchor="end" font-size="9.5" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">100%</text>
+<rect x="84.9" y="20.0" width="16" height="260.0" rx="2" fill="#2A78D6"/>
+<text x="92.9" y="15.0" text-anchor="middle" font-size="8.5" fill="#2A78D6" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">100.0</text>
+<rect x="104.9" y="28.6" width="16" height="251.4" rx="2" fill="#D03B3B"/>
+<text x="112.9" y="23.6" text-anchor="middle" font-size="8.5" fill="#D03B3B" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">99.7</text>
+<text x="102.9" y="296.0" text-anchor="middle" font-size="10" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="600">RNN</text>
+<text x="102.9" y="307.0" text-anchor="middle" font-size="10" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="600">aggregate</text>
+<text x="102.9" y="318.0" text-anchor="middle" font-size="8" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">7 cells</text>
+<rect x="170.6" y="35.6" width="16" height="244.4" rx="2" fill="#2A78D6"/>
+<text x="178.6" y="30.6" text-anchor="middle" font-size="8.5" fill="#2A78D6" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">99.4</text>
+<rect x="190.6" y="49.3" width="16" height="230.7" rx="2" fill="#D03B3B"/>
+<text x="198.6" y="44.3" text-anchor="middle" font-size="8.5" fill="#D03B3B" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">98.9</text>
+<text x="188.6" y="296.0" text-anchor="middle" font-size="10" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="600">CNN</text>
+<text x="188.6" y="307.0" text-anchor="middle" font-size="10" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="600">aggregate</text>
+<text x="188.6" y="318.0" text-anchor="middle" font-size="8" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">krum×min_max</text>
+<rect x="256.3" y="20.0" width="16" height="260.0" rx="2" fill="#2A78D6"/>
+<text x="264.3" y="15.0" text-anchor="middle" font-size="8.5" fill="#2A78D6" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">100.0</text>
+<rect x="276.3" y="28.6" width="16" height="251.4" rx="2" fill="#D03B3B"/>
+<text x="284.3" y="23.6" text-anchor="middle" font-size="8.5" fill="#D03B3B" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">99.7</text>
+<text x="274.3" y="296.0" text-anchor="middle" font-size="10" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="600">CNN</text>
+<text x="274.3" y="307.0" text-anchor="middle" font-size="10" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="600">.18</text>
+<text x="274.3" y="318.0" text-anchor="middle" font-size="8" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">client</text>
+<rect x="342.0" y="20.0" width="16" height="260.0" rx="2" fill="#2A78D6"/>
+<text x="350.0" y="15.0" text-anchor="middle" font-size="8.5" fill="#2A78D6" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">100.0</text>
+<rect x="362.0" y="28.6" width="16" height="251.4" rx="2" fill="#D03B3B"/>
+<text x="370.0" y="23.6" text-anchor="middle" font-size="8.5" fill="#D03B3B" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">99.7</text>
+<text x="360.0" y="296.0" text-anchor="middle" font-size="10" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="600">CNN</text>
+<text x="360.0" y="307.0" text-anchor="middle" font-size="10" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="600">.210</text>
+<text x="360.0" y="318.0" text-anchor="middle" font-size="8" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">client</text>
+<rect x="427.7" y="20.0" width="16" height="260.0" rx="2" fill="#2A78D6"/>
+<text x="435.7" y="15.0" text-anchor="middle" font-size="8.5" fill="#2A78D6" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">100.0</text>
+<rect x="447.7" y="28.6" width="16" height="251.4" rx="2" fill="#D03B3B"/>
+<text x="455.7" y="23.6" text-anchor="middle" font-size="8.5" fill="#D03B3B" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">99.7</text>
+<text x="445.7" y="296.0" text-anchor="middle" font-size="10" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="600">CNN</text>
+<text x="445.7" y="307.0" text-anchor="middle" font-size="10" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="600">.47</text>
+<text x="445.7" y="318.0" text-anchor="middle" font-size="8" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">client</text>
+<rect x="513.4" y="46.0" width="16" height="234.0" rx="2" fill="#2A78D6"/>
+<text x="521.4" y="41.0" text-anchor="middle" font-size="8.5" fill="#2A78D6" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">99.0</text>
+<rect x="533.4" y="79.9" width="16" height="200.1" rx="2" fill="#B8271F"/>
+<text x="541.4" y="74.9" text-anchor="middle" font-size="8.5" fill="#B8271F" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">97.7</text>
+<text x="531.4" y="296.0" text-anchor="middle" font-size="10" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="600">CNN</text>
+<text x="531.4" y="307.0" text-anchor="middle" font-size="10" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="600">.145</text>
+<text x="531.4" y="318.0" text-anchor="middle" font-size="8" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">client</text>
+<rect x="599.1" y="72.0" width="16" height="208.0" rx="2" fill="#2A78D6"/>
+<text x="607.1" y="67.0" text-anchor="middle" font-size="8.5" fill="#2A78D6" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">98.0</text>
+<rect x="619.1" y="80.5" width="16" height="199.5" rx="2" fill="#B8271F"/>
+<text x="627.1" y="75.5" text-anchor="middle" font-size="8.5" fill="#B8271F" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">97.7</text>
+<text x="617.1" y="296.0" text-anchor="middle" font-size="10" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="600">CNN</text>
+<text x="617.1" y="307.0" text-anchor="middle" font-size="10" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="600">.59</text>
+<text x="617.1" y="318.0" text-anchor="middle" font-size="8" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">client</text>
+</g>
+</svg>

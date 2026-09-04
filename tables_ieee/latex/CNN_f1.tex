@@ -1,0 +1,20 @@
+% Requires \usepackage{booktabs} (standard in IEEEtran).
+\begin{table}[t]
+\centering
+\caption{F1 Score (\%) --- CNN\,/\,CIFAR-10, baseline vs.\ each attack, by defense.}
+\label{tab:cnn_f1}
+\footnotesize
+\begin{tabular}{lcccccc}
+\toprule
+Condition & FedAvg & Krum & M-Krum & Median & Trim-Mean & FLAME \\
+\midrule
+\textbf{Baseline} & 64.55 & 59.56 & 63.86 & 61.27 & 63.43 & 63.17 \\
+\midrule
+Sign Flip & 61.21 & 51.80 & 59.97 & 60.21 & 61.50 & 63.65 \\
+Scale & 65.01 & 61.90 & 65.18 & 64.52 & 64.19 & 64.26 \\
+Noise & 65.95 & 63.12 & 64.24 & 64.82 & 63.95 & 61.84 \\
+Min-Max & 59.10 & 39.60 & 58.90 & 59.07 & 57.05 & 62.31 \\
+Min-Sum & 61.72 & 43.94 & 59.82 & 57.86 & 59.08 & 63.23 \\
+\bottomrule
+\end{tabular}
+\end{table}

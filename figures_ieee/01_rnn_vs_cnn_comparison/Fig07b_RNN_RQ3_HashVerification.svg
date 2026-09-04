@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 271.66" width="4.9369in" height="2.9156in">
+<rect x="0" y="0" width="460" height="271.66" fill="#FFFFFF"/>
+<text x="230.0" y="23.2" text-anchor="middle" font-size="14.24" font-weight="700" fill="#184F95" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">[RNN · UCI-HAR]</text>
+<g transform="translate(0,39.66)">
+<text x="52" y="22.0" font-size="12" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">FedAvg</text>
+<rect x="60" y="46" width="260.0" height="18" fill="#0CA30C"/>
+<text x="52" y="60.0" text-anchor="end" font-size="9.5" fill="#47525C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">min max</text>
+<text x="328.0" y="60.0" font-size="9.5" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">15/15 verified</text>
+<text x="52" y="72.0" font-size="12" fill="#10161C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-weight="700">Krum</text>
+<rect x="60" y="96" width="260.0" height="18" fill="#0CA30C"/>
+<text x="52" y="110.0" text-anchor="end" font-size="9.5" fill="#47525C" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">min sum</text>
+<text x="328.0" y="110.0" font-size="9.5" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif">15/15 verified</text>
+<text x="52" y="128.0" font-size="11" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-style="italic">Multi-Krum — no raw-update dump available yet</text>
+<rect x="60" y="130" width="260" height="10.8" rx="2" fill="none" stroke="#DCE1E5" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="52" y="154.8" font-size="11" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-style="italic">Median — no raw-update dump available yet</text>
+<rect x="60" y="156.8" width="260" height="10.8" rx="2" fill="none" stroke="#DCE1E5" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="52" y="181.6" font-size="11" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-style="italic">Trimmed-Mean — no raw-update dump available yet</text>
+<rect x="60" y="183.60000000000002" width="260" height="10.8" rx="2" fill="none" stroke="#DCE1E5" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="52" y="208.4" font-size="11" fill="#7C8791" font-family="Times New Roman, Liberation Serif, Nimbus Roman, Times, serif" font-style="italic">Flame — no raw-update dump available yet</text>
+<rect x="60" y="210.40000000000003" width="260" height="10.8" rx="2" fill="none" stroke="#DCE1E5" stroke-width="1.5" stroke-dasharray="4,3"/>
+</g>
+</svg>

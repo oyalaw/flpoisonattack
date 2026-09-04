@@ -1,0 +1,20 @@
+% Requires \usepackage{booktabs} (standard in IEEEtran).
+\begin{table}[t]
+\centering
+\caption{Accuracy (\%) --- RNN\,/\,UCI-HAR, baseline vs.\ each attack, by defense.}
+\label{tab:rnn_accuracy}
+\footnotesize
+\begin{tabular}{lcccccc}
+\toprule
+Condition & FedAvg & Krum & M-Krum & Median & Trim-Mean & FLAME \\
+\midrule
+\textbf{Baseline} & 78.33 & 62.61 & 76.73 & 77.22 & 76.76 & 72.97 \\
+\midrule
+Sign Flip & 76.15 & 42.35 & 70.99 & 75.36 & 71.70 & 55.11 \\
+Scale & 75.20 & 67.25 & 79.44 & 77.47 & 81.13 & 73.96 \\
+Noise & 82.25 & 68.92 & 71.22 & 79.06 & 81.47 & 75.36 \\
+Min-Max & 63.22 & 39.53 & 63.62 & 68.07 & 62.91 & 63.90 \\
+Min-Sum & 67.59 & 34.85 & 61.05 & 66.92 & 65.02 & 64.44 \\
+\bottomrule
+\end{tabular}
+\end{table}

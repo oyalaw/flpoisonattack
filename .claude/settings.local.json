@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 compare.py)",
+      "Skill(artifact-design)",
+      "Skill(artifact-design:*)",
+      "Skill(dataviz)",
+      "Skill(dataviz:*)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -sI http://localhost:8935/fl_poison_report.html)",
+      "Bash(nohup python3 -m http.server 8935)",
+      "Bash(disown)",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('analyzer.py'\\).read\\(\\)\\)\")",
+      "Bash(pip install *)",
+      "Bash(python3 -c \"import redis; print\\('redis available'\\)\")",
+      "Bash(python3 test_upload_scoring.py)",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('poison_live.py'\\).read\\(\\)\\)\")",
+      "Bash(python3 test_hmm_classifier.py)",
+      "Bash(sudo find / -maxdepth 6 -newermt \"2026-07-20 14:10\" \\\\\\( -iname \"analyzer_decision_log*\" -o -iname \"proxy_attack_events_20260720_14*\" \\\\\\))",
+      "Bash(cd /home/lawrence/Lawrence/FL_poison *)",
+      "Bash(sudo readlink -f /proc/259827/cwd)",
+      "Bash(sudo ls -la /proc/259827/fd)",
+      "Bash(sudo cat /proc/259827/cmdline)",
+      "Bash(whoami *)",
+      "Bash(ps aux | grep analyzer.py | grep -v grep *)",
+      "Bash(sort -k9)",
+      "Bash(python3 -c \"import pandas\")",
+      "Bash(python3 reports/generate_reports.py)",
+      "Bash(xargs '-I{}' sh -c 'echo {}; python3 -c \" *)",
+      "Bash(awk -F, '$2==\"krum\"' reports/out/validation_ledger.csv)",
+      "Bash(python3 reports/generate_reports.py --html)",
+      "Bash(awk '/^def interactive_wizard/,/^    return args$/' poison_live.py)",
+      "Bash(timeout 15 python3 -c ' *)",
+      "Bash(read f *)",
+      "Read(//media/tiger/mallik-2TB1/**)"
+    ]
+  }
+}

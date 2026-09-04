@@ -1,0 +1,12 @@
+research_question,report_metric,source_files,fields
+RQ1,"Phase accuracy, macro precision, recall, F1, confusion matrix",client_metrics_log; analyzer_decision_log,"client: phase, phase_start, phase_end, src_ip, round; analyzer: decision_phase, decision_confidence, client_id, packet_wall_time_ns, round"
+RQ1,Client fingerprint accuracy and confusion matrix,client_metrics_log; analyzer_decision_log,client: src_ip or client_id; analyzer: predicted_client_id or fingerprint_client_id
+RQ2,"Trigger precision, recall, F1, latency",client_metrics_log; analyzer_decision_log,"wire_upload_start_ns, wire_upload_end_ns, client_id or src_ip, round; action, trigger_publish_wall_time_ns, packet_wall_time_ns"
+RQ2,Selective modification and spillover,proxy_attack_events,"targeted, selected_for_attack, modified, phase_gate_open, phase_client_match, phase_prediction_round, fl_round"
+RQ3,Update reconstruction and protocol compatibility,proxy_attack_events,"modified, reconstruction_valid, finite_values_valid, wire_compatible, update_space_used, global_model_matched, contract hashes"
+RQ3,Benign geometry preservation,proxy_attack_events,"projected_to_genuine_norm_ratio, cosine_genuine_to_projected_update, distance_genuine_to_projected_update, sparsity fields, envelope containment fields"
+RQ4,Malicious admission and benign rejection,proxy_attack_events; server_client_defense_log,"proxy: modified, client_ip, fl_round; server: round, client_ip, selected_or_included, flame_in_main_cluster"
+RQ4,Defense detection confusion matrix,proxy_attack_events; server_client_defense_log,proxy modified ground truth; server inferred_suspicious
+RQ5,Global learning impact,server_metrics_log,"round, global_accuracy, global_macro_f1, global_loss"
+RQ5,Client learning and timing,client_metrics_log,"round, accuracy, f1_score, loss, fit_duration_s, train_duration_s, evaluation_duration_s"
+RQ5,Systems overhead and reliability,analyzer_decision_log; proxy_resource_log; proxy_attack_events; server_metrics_log; server_failure_log,"decision_lag_ms, CPU, RSS, rewrite_processing_duration_s, aggregation_duration_s, evaluation_duration_s, failures"

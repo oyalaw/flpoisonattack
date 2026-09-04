@@ -1,0 +1,1816 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>FL Poisoning -- Run-Validation Report</title>
+<style>
+:root {
+  color-scheme: light;
+  --paper: #F3F5F6; --surface: #FCFCFC; --surface-2: #EFF2F4;
+  --ink: #10161C; --ink-2: #47525C; --ink-muted: #7C8791;
+  --hairline: #DCE1E5;
+  --accent: #2A78D6; --accent-soft: #CDE2FB; --accent-ink: #184F95;
+  --good: #0CA30C; --warning-mark: #C98500; --critical: #D03B3B; --muted-mark: #8993A0;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --paper: #0C1014; --surface: #151A20; --surface-2: #1B2128;
+    --ink: #EEF1F3; --ink-2: #B8C1C9; --ink-muted: #808A93;
+    --hairline: #262D34;
+    --accent: #5C9EEA; --accent-soft: #1C3A5E; --accent-ink: #BBD8F8;
+    --good: #3FC23F; --warning-mark: #E0A63A; --critical: #E5665F; --muted-mark: #9AA4AD;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0C1014; --surface: #151A20; --surface-2: #1B2128;
+  --ink: #EEF1F3; --ink-2: #B8C1C9; --ink-muted: #808A93;
+  --hairline: #262D34;
+  --accent: #5C9EEA; --accent-soft: #1C3A5E; --accent-ink: #BBD8F8;
+  --good: #3FC23F; --warning-mark: #E0A63A; --critical: #E5665F; --muted-mark: #9AA4AD;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.6; }
+.page { max-width: 1040px; margin: 0 auto; padding: 48px 24px 96px; }
+h1, h2, h3 { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-weight: 600; }
+code, .mono { font-family: ui-monospace, "SF Mono", Consolas, monospace; }
+header { border-bottom: 1px solid var(--hairline); padding-bottom: 24px; margin-bottom: 32px; }
+.eyebrow { font-family: ui-monospace, monospace; font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--accent-ink); background: var(--accent-soft); display: inline-block; padding: 3px 8px; border-radius: 3px; margin-bottom: 12px; }
+h1 { font-size: 26px; margin: 0 0 8px; }
+.subtitle { color: var(--ink-2); font-size: 14.5px; max-width: 70ch; margin: 0 0 14px; }
+.provenance { font-size: 12px; color: var(--ink-muted); display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.stat-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: var(--hairline);
+  border: 1px solid var(--hairline); border-radius: 6px; overflow: hidden; margin-bottom: 36px; }
+.stat-tile { background: var(--surface); padding: 14px 16px; }
+.stat-value { font-size: 20px; font-weight: 600; font-family: ui-monospace, monospace; }
+.stat-label { font-size: 11px; color: var(--ink-muted); margin-top: 2px; }
+section { margin-bottom: 48px; }
+h2 { font-size: 19px; margin: 0 0 4px; }
+.section-dek { color: var(--ink-2); font-size: 13.5px; margin: 4px 0 16px; max-width: 76ch; }
+.table-scroll { overflow-x: auto; border: 1px solid var(--hairline); border-radius: 6px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 720px; }
+th, td { padding: 8px 11px; text-align: left; font-size: 12.5px; border-bottom: 1px solid var(--hairline); white-space: nowrap; }
+th { color: var(--ink-muted); font-weight: 600; text-transform: uppercase; letter-spacing: .02em; font-size: 10px; background: var(--surface-2); }
+tr:last-child td { border-bottom: none; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.pill { display: inline-flex; align-items: center; gap: 5px; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+.pill.valid { background: rgba(12,163,12,.14); color: var(--good); }
+.pill.invalid { background: rgba(208,59,59,.12); color: var(--critical); }
+.pill.partial { background: rgba(201,133,0,.15); color: var(--warning-mark); }
+.pill.anomalous { background: rgba(201,133,0,.15); color: var(--warning-mark); }
+.pill.pending { background: var(--surface-2); color: var(--ink-muted); }
+.funnel { display: flex; flex-direction: column; border: 1px solid var(--hairline); border-radius: 8px; overflow: hidden; background: var(--surface); margin-bottom: 18px; }
+.funnel-head { padding: 10px 16px; border-bottom: 1px solid var(--hairline); font-size: 13px; font-weight: 600; display: flex; justify-content: space-between; gap: 10px; }
+.funnel-row { display: grid; grid-template-columns: 190px 1fr 70px; align-items: center; gap: 12px; padding: 7px 16px; border-bottom: 1px solid var(--hairline); }
+.funnel-row:last-child { border-bottom: none; }
+.funnel-label { font-size: 12px; color: var(--ink-2); }
+.funnel-bar-track { background: var(--surface-2); border-radius: 4px; height: 16px; overflow: hidden; }
+.funnel-bar-fill { height: 100%; background: var(--accent); border-radius: 4px; }
+.funnel-count { font-family: ui-monospace, monospace; font-size: 12px; text-align: right; }
+footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--hairline); font-size: 11.5px; color: var(--ink-muted); }
+</style></head>
+<body><div class="page">
+
+<header>
+  <div class="eyebrow">Auto-generated by reports/generate_reports.py -- not hand-edited</div>
+  <h1>Run-Validation, Attack-Funnel &amp; Model-Impact Report</h1>
+  <p class="subtitle">Computed directly from proxy_attack_events / server_metrics_log / run-manifest files discovered on disk. Nothing below is estimated or carried over from a prior conversation.</p>
+  <div class="provenance">
+    <span>Generated 2026-07-22 22:38 UTC</span>
+    <span>80 experiment_id runs discovered</span>
+    <span>49 attack-condition runs</span>
+  </div>
+</header>
+
+<div class="stat-strip">
+  <div class="stat-tile"><div class="stat-value" style="color:var(--good);">15</div><div class="stat-label">Valid attack</div></div>
+  <div class="stat-tile"><div class="stat-value" style="color:var(--critical);">2</div><div class="stat-label">Invalid (0% delivered)</div></div>
+  <div class="stat-tile"><div class="stat-value" style="color:var(--warning-mark);">6</div><div class="stat-label">Anomalous (delivered, acc. improved)</div></div>
+  <div class="stat-tile"><div class="stat-value" style="color:var(--ink-muted);">8</div><div class="stat-label">Diagnostic-only</div></div>
+  <div class="stat-tile"><div class="stat-value">19</div><div class="stat-label">Classification pending</div></div>
+  <div class="stat-tile"><div class="stat-value" style="color:var(--ink-muted);">0</div><div class="stat-label">Structurally infeasible (not a gap)</div></div>
+</div>
+
+<section>
+  <h2>Run-Validation Ledger</h2>
+  <p class="section-dek">Every discovered experiment_id, classified by the documented heuristic in <code>classify_validity()</code> -- delivery-rate bucket crossed with baseline-band position. Inspect the rationale column before citing a borderline case.</p>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Experiment</th><th>Defense</th><th>Attack</th><th>Delivered</th><th>Rate</th><th>Final Acc.</th><th>Validity</th><th>Rationale</th></tr></thead>
+    <tbody><tr>
+          <td class="mono">exp_1784757164</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="num">29/49</td>
+          <td class="num">59%</td>
+          <td class="num">—</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">59% delivery confirmed, but no baseline band available to judge impact</td>
+        </tr><tr>
+          <td class="mono">exp_1784324182</td>
+          <td>fedavg</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">77.91%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784324740</td>
+          <td>fedavg</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">79.27%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784325319</td>
+          <td>fedavg</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">77.91%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784325905</td>
+          <td>fedavg</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">78.52%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784327173</td>
+          <td>fedavg</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">78.05%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784525260</td>
+          <td>fedavg</td>
+          <td>min_max</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">79.57%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_1784567377</td>
+          <td>fedavg</td>
+          <td>min_max</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">77.81%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_1784571040</td>
+          <td>fedavg</td>
+          <td>min_max</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">76.86%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_1784582452</td>
+          <td>fedavg</td>
+          <td>min_max</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">78.83%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_1784588665</td>
+          <td>fedavg</td>
+          <td>min_max</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">69.80%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">proxy log exists but has zero rows for the target client</td>
+        </tr><tr>
+          <td class="mono">exp_1784591524</td>
+          <td>fedavg</td>
+          <td>min_max</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">60.64%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_1784522056</td>
+          <td>fedavg</td>
+          <td>min_sum</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">77.47%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_1784674892</td>
+          <td>fedavg</td>
+          <td>min_sum</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">67.59%</td>
+          <td><span class="pill valid">Valid attack (degraded)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy BELOW baseline floor [0.7791, 0.7927] -- degradation</td>
+        </tr><tr>
+          <td class="mono">exp_1784398211</td>
+          <td>fedavg</td>
+          <td>noise</td>
+          <td class="num">77/100</td>
+          <td class="num">77%</td>
+          <td class="num">82.25%</td>
+          <td><span class="pill anomalous">Anomalous (delivered, accuracy improved -- inspect)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">77% delivery, final accuracy ABOVE baseline ceiling [0.7791, 0.7927] -- attack delivered but accuracy improved, inspect before citing</td>
+        </tr><tr>
+          <td class="mono">exp_1784394210</td>
+          <td>fedavg</td>
+          <td>scale</td>
+          <td class="num">76/100</td>
+          <td class="num">76%</td>
+          <td class="num">75.20%</td>
+          <td><span class="pill valid">Valid attack (degraded)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">76% delivery, final accuracy BELOW baseline floor [0.7791, 0.7927] -- degradation</td>
+        </tr><tr>
+          <td class="mono">exp_1784392708</td>
+          <td>fedavg</td>
+          <td>sign_flip</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">76.15%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_1784302690</td>
+          <td>flame</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">77.37%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784303289</td>
+          <td>flame</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">67.90%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784304581</td>
+          <td>flame</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">75.30%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784306125</td>
+          <td>flame</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">74.04%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784307171</td>
+          <td>flame</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">70.24%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784659861</td>
+          <td>flame</td>
+          <td>min_max</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">63.90%</td>
+          <td><span class="pill valid">Valid attack (degraded)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy BELOW baseline floor [0.6790, 0.7737] -- degradation</td>
+        </tr><tr>
+          <td class="mono">exp_178466034</td>
+          <td>flame</td>
+          <td>min_sum</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">—</td>
+          <td><span class="pill pending">Diagnostic-only (delivered, no measurable damage)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy within baseline noise band</td>
+        </tr><tr>
+          <td class="mono">exp_1784660634</td>
+          <td>flame</td>
+          <td>min_sum</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">64.44%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_174659101</td>
+          <td>flame</td>
+          <td>noise</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">—</td>
+          <td><span class="pill pending">Diagnostic-only (delivered, no measurable damage)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy within baseline noise band</td>
+        </tr><tr>
+          <td class="mono">exp_1784653738</td>
+          <td>flame</td>
+          <td>noise</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">76.65%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_1784659101</td>
+          <td>flame</td>
+          <td>noise</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">74.08%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_1784653090</td>
+          <td>flame</td>
+          <td>scale</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">71.36%</td>
+          <td><span class="pill pending">Diagnostic-only (delivered, no measurable damage)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy within baseline noise band</td>
+        </tr><tr>
+          <td class="mono">exp_1784655171</td>
+          <td>flame</td>
+          <td>scale</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">67.70%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_1784658620</td>
+          <td>flame</td>
+          <td>scale</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">76.55%</td>
+          <td><span class="pill pending">Diagnostic-only (delivered, no measurable damage)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy within baseline noise band</td>
+        </tr><tr>
+          <td class="mono">exp_1784656617</td>
+          <td>flame</td>
+          <td>sign_flip</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">—</td>
+          <td><span class="pill pending">Diagnostic-only (delivered, no measurable damage)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy within baseline noise band</td>
+        </tr><tr>
+          <td class="mono">exp_1784657615</td>
+          <td>flame</td>
+          <td>sign_flip</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">55.11%</td>
+          <td><span class="pill valid">Valid attack (degraded)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy BELOW baseline floor [0.6790, 0.7737] -- degradation</td>
+        </tr><tr>
+          <td class="mono">exp_1784320724</td>
+          <td>krum</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">61.89%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784321415</td>
+          <td>krum</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">66.34%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784322126</td>
+          <td>krum</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">63.59%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784322798</td>
+          <td>krum</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">62.67%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784323541</td>
+          <td>krum</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">58.57%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784522657</td>
+          <td>krum</td>
+          <td>min_max</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">65.29%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_1784675537</td>
+          <td>krum</td>
+          <td>min_max</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">39.53%</td>
+          <td><span class="pill valid">Valid attack (degraded)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy BELOW baseline floor [0.5857, 0.6634] -- degradation</td>
+        </tr><tr>
+          <td class="mono">exp_1784511073</td>
+          <td>krum</td>
+          <td>min_sum</td>
+          <td class="num">0/100</td>
+          <td class="num">0%</td>
+          <td class="num">—</td>
+          <td><span class="pill invalid">Invalid (no poisoned update delivered)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">0% of targeted rounds had a poisoned update delivered</td>
+        </tr><tr>
+          <td class="mono">exp_1784523249</td>
+          <td>krum</td>
+          <td>min_sum</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">67.66%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_1784592646</td>
+          <td>krum</td>
+          <td>min_sum</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">51.03%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_1784485719</td>
+          <td>krum</td>
+          <td>noise</td>
+          <td class="num">77/100</td>
+          <td class="num">77%</td>
+          <td class="num">68.92%</td>
+          <td><span class="pill anomalous">Anomalous (delivered, accuracy improved -- inspect)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">77% delivery, final accuracy ABOVE baseline ceiling [0.5857, 0.6634] -- attack delivered but accuracy improved, inspect before citing</td>
+        </tr><tr>
+          <td class="mono">exp_1784484794</td>
+          <td>krum</td>
+          <td>scale</td>
+          <td class="num">77/100</td>
+          <td class="num">77%</td>
+          <td class="num">67.25%</td>
+          <td><span class="pill anomalous">Anomalous (delivered, accuracy improved -- inspect)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">77% delivery, final accuracy ABOVE baseline ceiling [0.5857, 0.6634] -- attack delivered but accuracy improved, inspect before citing</td>
+        </tr><tr>
+          <td class="mono">exp_1784484053</td>
+          <td>krum</td>
+          <td>sign_flip</td>
+          <td class="num">0/100</td>
+          <td class="num">0%</td>
+          <td class="num">53.31%</td>
+          <td><span class="pill invalid">Invalid (no poisoned update delivered)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">0% of targeted rounds had a poisoned update delivered</td>
+        </tr><tr>
+          <td class="mono">exp_1784677584</td>
+          <td>krum</td>
+          <td>sign_flip</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">42.35%</td>
+          <td><span class="pill valid">Valid attack (degraded)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy BELOW baseline floor [0.5857, 0.6634] -- degradation</td>
+        </tr><tr>
+          <td class="mono">exp_1784313009</td>
+          <td>median</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">79.10%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784313759</td>
+          <td>median</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">76.42%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784314312</td>
+          <td>median</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">73.26%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784315092</td>
+          <td>median</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">81.34%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784315800</td>
+          <td>median</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">76.01%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784668683</td>
+          <td>median</td>
+          <td>min_max</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">68.07%</td>
+          <td><span class="pill valid">Valid attack (degraded)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy BELOW baseline floor [0.7326, 0.8134] -- degradation</td>
+        </tr><tr>
+          <td class="mono">exp_1784669398</td>
+          <td>median</td>
+          <td>min_sum</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">66.92%</td>
+          <td><span class="pill valid">Valid attack (degraded)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy BELOW baseline floor [0.7326, 0.8134] -- degradation</td>
+        </tr><tr>
+          <td class="mono">exp_1784665673</td>
+          <td>median</td>
+          <td>noise</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">79.06%</td>
+          <td><span class="pill pending">Diagnostic-only (delivered, no measurable damage)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy within baseline noise band</td>
+        </tr><tr>
+          <td class="mono">exp_1784664942</td>
+          <td>median</td>
+          <td>scale</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">77.47%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_17884664942</td>
+          <td>median</td>
+          <td>scale</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">—</td>
+          <td><span class="pill pending">Diagnostic-only (delivered, no measurable damage)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy within baseline noise band</td>
+        </tr><tr>
+          <td class="mono">exp_1784663498</td>
+          <td>median</td>
+          <td>sign_flip</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">75.36%</td>
+          <td><span class="pill pending">Diagnostic-only (delivered, no measurable damage)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy within baseline noise band</td>
+        </tr><tr>
+          <td class="mono">exp_1784316761</td>
+          <td>multi-krum</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">76.86%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784317525</td>
+          <td>multi-krum</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">76.25%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784318171</td>
+          <td>multi-krum</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">79.23%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784319003</td>
+          <td>multi-krum</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">74.41%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784319728</td>
+          <td>multi-krum</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">76.89%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784495790</td>
+          <td>multi-krum</td>
+          <td>min_max</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">76.35%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_1784678456</td>
+          <td>multi-krum</td>
+          <td>min_max</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">63.62%</td>
+          <td><span class="pill valid">Valid attack (degraded)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy BELOW baseline floor [0.7441, 0.7923] -- degradation</td>
+        </tr><tr>
+          <td class="mono">exp_1784497109</td>
+          <td>multi-krum</td>
+          <td>min_sum</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">77.10%</td>
+          <td><span class="pill pending">Classification pending (missing data)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">no proxy_attack_events log found for this experiment_id -- delivery unverified</td>
+        </tr><tr>
+          <td class="mono">exp_1784679524</td>
+          <td>multi-krum</td>
+          <td>min_sum</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">61.05%</td>
+          <td><span class="pill valid">Valid attack (degraded)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy BELOW baseline floor [0.7441, 0.7923] -- degradation</td>
+        </tr><tr>
+          <td class="mono">exp_1784494575</td>
+          <td>multi-krum</td>
+          <td>noise</td>
+          <td class="num">97/100</td>
+          <td class="num">97%</td>
+          <td class="num">71.22%</td>
+          <td><span class="pill valid">Valid attack (degraded)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">97% delivery, final accuracy BELOW baseline floor [0.7441, 0.7923] -- degradation</td>
+        </tr><tr>
+          <td class="mono">exp_1784493342</td>
+          <td>multi-krum</td>
+          <td>scale</td>
+          <td class="num">77/100</td>
+          <td class="num">77%</td>
+          <td class="num">79.44%</td>
+          <td><span class="pill anomalous">Anomalous (delivered, accuracy improved -- inspect)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">77% delivery, final accuracy ABOVE baseline ceiling [0.7441, 0.7923] -- attack delivered but accuracy improved, inspect before citing</td>
+        </tr><tr>
+          <td class="mono">exp_1784492511</td>
+          <td>multi-krum</td>
+          <td>sign_flip</td>
+          <td class="num">77/100</td>
+          <td class="num">77%</td>
+          <td class="num">70.99%</td>
+          <td><span class="pill valid">Valid attack (degraded)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">77% delivery, final accuracy BELOW baseline floor [0.7441, 0.7923] -- degradation</td>
+        </tr><tr>
+          <td class="mono">exp_1784308577</td>
+          <td>trimmed-mean</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">80.49%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784309366</td>
+          <td>trimmed-mean</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">73.16%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784310526</td>
+          <td>trimmed-mean</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">75.20%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784311282</td>
+          <td>trimmed-mean</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">76.04%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784311994</td>
+          <td>trimmed-mean</td>
+          <td>baseline</td>
+          <td class="num">—</td>
+          <td class="num">—</td>
+          <td class="num">78.89%</td>
+          <td><span class="pill valid">Valid baseline</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">n=5 independent runs</td>
+        </tr><tr>
+          <td class="mono">exp_1784672967</td>
+          <td>trimmed-mean</td>
+          <td>min_max</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">62.91%</td>
+          <td><span class="pill valid">Valid attack (degraded)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy BELOW baseline floor [0.7316, 0.8049] -- degradation</td>
+        </tr><tr>
+          <td class="mono">exp_1784673892</td>
+          <td>trimmed-mean</td>
+          <td>min_sum</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">65.02%</td>
+          <td><span class="pill valid">Valid attack (degraded)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy BELOW baseline floor [0.7316, 0.8049] -- degradation</td>
+        </tr><tr>
+          <td class="mono">exp_1784672136</td>
+          <td>trimmed-mean</td>
+          <td>noise</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">81.47%</td>
+          <td><span class="pill anomalous">Anomalous (delivered, accuracy improved -- inspect)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy ABOVE baseline ceiling [0.7316, 0.8049] -- attack delivered but accuracy improved, inspect before citing</td>
+        </tr><tr>
+          <td class="mono">exp_1784671518</td>
+          <td>trimmed-mean</td>
+          <td>scale</td>
+          <td class="num">80/100</td>
+          <td class="num">80%</td>
+          <td class="num">81.13%</td>
+          <td><span class="pill anomalous">Anomalous (delivered, accuracy improved -- inspect)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">80% delivery, final accuracy ABOVE baseline ceiling [0.7316, 0.8049] -- attack delivered but accuracy improved, inspect before citing</td>
+        </tr><tr>
+          <td class="mono">exp_1784670743</td>
+          <td>trimmed-mean</td>
+          <td>sign_flip</td>
+          <td class="num">79/100</td>
+          <td class="num">79%</td>
+          <td class="num">71.70%</td>
+          <td><span class="pill valid">Valid attack (degraded)</span></td>
+          <td style="white-space:normal; color:var(--ink-muted); font-size:11.5px;">79% delivery, final accuracy BELOW baseline floor [0.7316, 0.8049] -- degradation</td>
+        </tr></tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Attack Execution Funnel</h2>
+  <p class="section-dek">Target-client rows only, staged by the proxy's own <code>phase_gate_open</code> / <code>attack_phase</code> / <code>modified</code> fields.</p>
+  <div class="funnel">
+          <div class="funnel-head"><span>fedavg &middot; min_sum</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784674892</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>fedavg &middot; noise</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784398211</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:97.0%"></div></div>
+              <div class="funnel-count">97</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:77.0%"></div></div>
+              <div class="funnel-count">77</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:77.0%"></div></div>
+              <div class="funnel-count">77</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>fedavg &middot; scale</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784394210</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:96.0%"></div></div>
+              <div class="funnel-count">96</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:76.0%"></div></div>
+              <div class="funnel-count">76</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:76.0%"></div></div>
+              <div class="funnel-count">76</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>flame &middot; min_max</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784659861</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>flame &middot; min_sum</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_178466034</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>flame &middot; noise</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_174659101</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>flame &middot; scale</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784653090</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>flame &middot; scale</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784658620</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>flame &middot; sign_flip</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784656617</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>flame &middot; sign_flip</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784657615</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>krum &middot; min_max</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784675537</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>krum &middot; min_sum</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784511073</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:97.0%"></div></div>
+              <div class="funnel-count">97</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:0.0%"></div></div>
+              <div class="funnel-count">0</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:0.0%"></div></div>
+              <div class="funnel-count">0</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>krum &middot; noise</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784485719</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:97.0%"></div></div>
+              <div class="funnel-count">97</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:77.0%"></div></div>
+              <div class="funnel-count">77</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:77.0%"></div></div>
+              <div class="funnel-count">77</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>krum &middot; scale</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784484794</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:97.0%"></div></div>
+              <div class="funnel-count">97</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:77.0%"></div></div>
+              <div class="funnel-count">77</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:77.0%"></div></div>
+              <div class="funnel-count">77</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>krum &middot; sign_flip</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784484053</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:19.0%"></div></div>
+              <div class="funnel-count">19</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:0.0%"></div></div>
+              <div class="funnel-count">0</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:0.0%"></div></div>
+              <div class="funnel-count">0</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>krum &middot; sign_flip</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784677584</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>median &middot; min_max</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784668683</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>median &middot; min_sum</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784669398</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>median &middot; noise</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784665673</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>median &middot; scale</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_17884664942</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>median &middot; sign_flip</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784663498</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>multi-krum &middot; min_max</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784678456</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>multi-krum &middot; min_sum</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784679524</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>multi-krum &middot; noise</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784494575</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:97.0%"></div></div>
+              <div class="funnel-count">97</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:97.0%"></div></div>
+              <div class="funnel-count">97</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:97.0%"></div></div>
+              <div class="funnel-count">97</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>multi-krum &middot; scale</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784493342</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:97.0%"></div></div>
+              <div class="funnel-count">97</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:77.0%"></div></div>
+              <div class="funnel-count">77</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:77.0%"></div></div>
+              <div class="funnel-count">77</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>multi-krum &middot; sign_flip</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784492511</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:97.0%"></div></div>
+              <div class="funnel-count">97</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:77.0%"></div></div>
+              <div class="funnel-count">77</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:77.0%"></div></div>
+              <div class="funnel-count">77</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>trimmed-mean &middot; min_max</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784672967</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>trimmed-mean &middot; min_sum</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784673892</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>trimmed-mean &middot; noise</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784672136</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>trimmed-mean &middot; scale</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784671518</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:80.0%"></div></div>
+              <div class="funnel-count">80</div>
+            </div>
+        </div><div class="funnel">
+          <div class="funnel-head"><span>trimmed-mean &middot; sign_flip</span>
+          <span class="mono" style="color:var(--ink-muted); font-weight:400;">exp_1784670743</span></div>
+          <div class="funnel-row">
+              <div class="funnel-label">Target uploads observed</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:100.0%"></div></div>
+              <div class="funnel-count">100</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Eligible after phase gate</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:99.0%"></div></div>
+              <div class="funnel-count">99</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Post-warmup candidates</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:79.0%"></div></div>
+              <div class="funnel-count">79</div>
+            </div>
+          <div class="funnel-row">
+              <div class="funnel-label">Poisoned payloads delivered</div>
+              <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width:79.0%"></div></div>
+              <div class="funnel-count">79</div>
+            </div>
+        </div>
+</section>
+
+<section>
+  <h2>Model Impact</h2>
+  <p class="section-dek">Final accuracy vs. each defense's own clean-baseline mean, for every attack run with server-side accuracy data (regardless of whether delivery was independently confirmed -- check the Validity column above).</p>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Defense &middot; Attack</th><th>Baseline mean</th><th>Final acc.</th><th>&Delta;A</th><th>Band position</th></tr></thead>
+    <tbody><tr>
+          <td>fedavg &middot; min_max</td>
+          <td class="num">78.33%</td>
+          <td class="num">79.57%</td>
+          <td class="num" style="color:var(--warning-mark); font-weight:600;">+1.24pp</td>
+          <td style="color:var(--warning-mark);">above ceiling</td>
+        </tr><tr>
+          <td>fedavg &middot; min_max</td>
+          <td class="num">78.33%</td>
+          <td class="num">77.81%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-0.52pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>fedavg &middot; min_max</td>
+          <td class="num">78.33%</td>
+          <td class="num">76.86%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-1.47pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>fedavg &middot; min_max</td>
+          <td class="num">78.33%</td>
+          <td class="num">78.83%</td>
+          <td class="num" style="color:var(--ink-muted); font-weight:600;">+0.50pp</td>
+          <td style="color:var(--ink-muted);">inside range</td>
+        </tr><tr>
+          <td>fedavg &middot; min_max</td>
+          <td class="num">78.33%</td>
+          <td class="num">69.80%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-8.53pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>fedavg &middot; min_max</td>
+          <td class="num">78.33%</td>
+          <td class="num">60.64%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-17.69pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>fedavg &middot; min_sum</td>
+          <td class="num">78.33%</td>
+          <td class="num">77.47%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-0.86pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>fedavg &middot; min_sum</td>
+          <td class="num">78.33%</td>
+          <td class="num">67.59%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-10.74pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>fedavg &middot; noise</td>
+          <td class="num">78.33%</td>
+          <td class="num">82.25%</td>
+          <td class="num" style="color:var(--warning-mark); font-weight:600;">+3.92pp</td>
+          <td style="color:var(--warning-mark);">above ceiling</td>
+        </tr><tr>
+          <td>fedavg &middot; scale</td>
+          <td class="num">78.33%</td>
+          <td class="num">75.20%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-3.14pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>fedavg &middot; sign_flip</td>
+          <td class="num">78.33%</td>
+          <td class="num">76.15%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-2.19pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>flame &middot; min_max</td>
+          <td class="num">72.97%</td>
+          <td class="num">63.90%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-9.07pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>flame &middot; min_sum</td>
+          <td class="num">72.97%</td>
+          <td class="num">64.44%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-8.53pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>flame &middot; noise</td>
+          <td class="num">72.97%</td>
+          <td class="num">76.65%</td>
+          <td class="num" style="color:var(--ink-muted); font-weight:600;">+3.69pp</td>
+          <td style="color:var(--ink-muted);">inside range</td>
+        </tr><tr>
+          <td>flame &middot; noise</td>
+          <td class="num">72.97%</td>
+          <td class="num">74.08%</td>
+          <td class="num" style="color:var(--ink-muted); font-weight:600;">+1.11pp</td>
+          <td style="color:var(--ink-muted);">inside range</td>
+        </tr><tr>
+          <td>flame &middot; scale</td>
+          <td class="num">72.97%</td>
+          <td class="num">71.36%</td>
+          <td class="num" style="color:var(--ink-muted); font-weight:600;">-1.61pp</td>
+          <td style="color:var(--ink-muted);">inside range</td>
+        </tr><tr>
+          <td>flame &middot; scale</td>
+          <td class="num">72.97%</td>
+          <td class="num">67.70%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-5.27pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>flame &middot; scale</td>
+          <td class="num">72.97%</td>
+          <td class="num">76.55%</td>
+          <td class="num" style="color:var(--ink-muted); font-weight:600;">+3.58pp</td>
+          <td style="color:var(--ink-muted);">inside range</td>
+        </tr><tr>
+          <td>flame &middot; sign_flip</td>
+          <td class="num">72.97%</td>
+          <td class="num">55.11%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-17.86pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>krum &middot; min_max</td>
+          <td class="num">62.61%</td>
+          <td class="num">65.29%</td>
+          <td class="num" style="color:var(--ink-muted); font-weight:600;">+2.67pp</td>
+          <td style="color:var(--ink-muted);">inside range</td>
+        </tr><tr>
+          <td>krum &middot; min_max</td>
+          <td class="num">62.61%</td>
+          <td class="num">39.53%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-23.08pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>krum &middot; min_sum</td>
+          <td class="num">62.61%</td>
+          <td class="num">67.66%</td>
+          <td class="num" style="color:var(--warning-mark); font-weight:600;">+5.05pp</td>
+          <td style="color:var(--warning-mark);">above ceiling</td>
+        </tr><tr>
+          <td>krum &middot; min_sum</td>
+          <td class="num">62.61%</td>
+          <td class="num">51.03%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-11.58pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>krum &middot; noise</td>
+          <td class="num">62.61%</td>
+          <td class="num">68.92%</td>
+          <td class="num" style="color:var(--warning-mark); font-weight:600;">+6.30pp</td>
+          <td style="color:var(--warning-mark);">above ceiling</td>
+        </tr><tr>
+          <td>krum &middot; scale</td>
+          <td class="num">62.61%</td>
+          <td class="num">67.25%</td>
+          <td class="num" style="color:var(--warning-mark); font-weight:600;">+4.64pp</td>
+          <td style="color:var(--warning-mark);">above ceiling</td>
+        </tr><tr>
+          <td>krum &middot; sign_flip</td>
+          <td class="num">62.61%</td>
+          <td class="num">53.31%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-9.30pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>krum &middot; sign_flip</td>
+          <td class="num">62.61%</td>
+          <td class="num">42.35%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-20.26pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>median &middot; min_max</td>
+          <td class="num">77.22%</td>
+          <td class="num">68.07%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-9.16pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>median &middot; min_sum</td>
+          <td class="num">77.22%</td>
+          <td class="num">66.92%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-10.31pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>median &middot; noise</td>
+          <td class="num">77.22%</td>
+          <td class="num">79.06%</td>
+          <td class="num" style="color:var(--ink-muted); font-weight:600;">+1.84pp</td>
+          <td style="color:var(--ink-muted);">inside range</td>
+        </tr><tr>
+          <td>median &middot; scale</td>
+          <td class="num">77.22%</td>
+          <td class="num">77.47%</td>
+          <td class="num" style="color:var(--ink-muted); font-weight:600;">+0.24pp</td>
+          <td style="color:var(--ink-muted);">inside range</td>
+        </tr><tr>
+          <td>median &middot; sign_flip</td>
+          <td class="num">77.22%</td>
+          <td class="num">75.36%</td>
+          <td class="num" style="color:var(--ink-muted); font-weight:600;">-1.86pp</td>
+          <td style="color:var(--ink-muted);">inside range</td>
+        </tr><tr>
+          <td>multi-krum &middot; min_max</td>
+          <td class="num">76.73%</td>
+          <td class="num">76.35%</td>
+          <td class="num" style="color:var(--ink-muted); font-weight:600;">-0.38pp</td>
+          <td style="color:var(--ink-muted);">inside range</td>
+        </tr><tr>
+          <td>multi-krum &middot; min_max</td>
+          <td class="num">76.73%</td>
+          <td class="num">63.62%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-13.10pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>multi-krum &middot; min_sum</td>
+          <td class="num">76.73%</td>
+          <td class="num">77.10%</td>
+          <td class="num" style="color:var(--ink-muted); font-weight:600;">+0.37pp</td>
+          <td style="color:var(--ink-muted);">inside range</td>
+        </tr><tr>
+          <td>multi-krum &middot; min_sum</td>
+          <td class="num">76.73%</td>
+          <td class="num">61.05%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-15.68pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>multi-krum &middot; noise</td>
+          <td class="num">76.73%</td>
+          <td class="num">71.22%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-5.50pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>multi-krum &middot; scale</td>
+          <td class="num">76.73%</td>
+          <td class="num">79.44%</td>
+          <td class="num" style="color:var(--warning-mark); font-weight:600;">+2.71pp</td>
+          <td style="color:var(--warning-mark);">above ceiling</td>
+        </tr><tr>
+          <td>multi-krum &middot; sign_flip</td>
+          <td class="num">76.73%</td>
+          <td class="num">70.99%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-5.74pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>trimmed-mean &middot; min_max</td>
+          <td class="num">76.76%</td>
+          <td class="num">62.91%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-13.84pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>trimmed-mean &middot; min_sum</td>
+          <td class="num">76.76%</td>
+          <td class="num">65.02%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-11.74pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr><tr>
+          <td>trimmed-mean &middot; noise</td>
+          <td class="num">76.76%</td>
+          <td class="num">81.47%</td>
+          <td class="num" style="color:var(--warning-mark); font-weight:600;">+4.72pp</td>
+          <td style="color:var(--warning-mark);">above ceiling</td>
+        </tr><tr>
+          <td>trimmed-mean &middot; scale</td>
+          <td class="num">76.76%</td>
+          <td class="num">81.13%</td>
+          <td class="num" style="color:var(--warning-mark); font-weight:600;">+4.38pp</td>
+          <td style="color:var(--warning-mark);">above ceiling</td>
+        </tr><tr>
+          <td>trimmed-mean &middot; sign_flip</td>
+          <td class="num">76.76%</td>
+          <td class="num">71.70%</td>
+          <td class="num" style="color:var(--critical); font-weight:600;">-5.06pp</td>
+          <td style="color:var(--critical);">below floor</td>
+        </tr></tbody>
+  </table></div>
+</section>
+
+<footer>Source: /home/lawrence/Lawrence/FL_poison/reports/out -- regenerate with <code>python3 reports/generate_reports.py --html</code>.</footer>
+</div></body></html>

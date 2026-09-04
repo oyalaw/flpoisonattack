@@ -1,0 +1,14 @@
+Validation status: PASS
+
+1. validate_selection_attack_corrections.py
+   PASS: Min Sum squared geometry, boundary strength, Krum defense validation,
+   synchronized peer round selection, and FedAvg/Krum Optimal preflight rejection.
+
+2. validate_transport_isolation.py
+   PASS: non target upload and download bytes preserved exactly, no synthetic
+   credit on non target flows, and target authorization unchanged.
+
+3. validate_update_space.py
+   PASS: tensor contract discovery, model cache, update reconstruction, phase
+   fail open behavior, peer observation, envelope generation, payload length
+   preservation, and disk spool policy.

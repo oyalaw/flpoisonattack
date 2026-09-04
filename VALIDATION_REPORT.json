@@ -1,0 +1,50 @@
+{
+  "release": "V27.1",
+  "purpose": "non-target HTTP/2 transport isolation and exact relay diagnostics",
+  "transport_isolation": {
+    "tool_version": "validate_transport_isolation_v27_1",
+    "non_target_exact_forwarding": {
+      "client_ip": "10.42.0.47",
+      "targeted": false,
+      "exact_bytes_preserved": true,
+      "expected_bytes": 71,
+      "received_bytes": 71,
+      "synthetic_credit_seen_by_client": false
+    },
+    "non_target_downstream_exact_forwarding": {
+      "client_ip": "10.42.0.47",
+      "targeted": false,
+      "exact_bytes_preserved": true,
+      "expected_bytes": 41,
+      "received_bytes": 41,
+      "server_credit_suppressed_bytes": 0
+    },
+    "target_authorization": {
+      "client_ip": "10.42.0.210",
+      "targeted": true,
+      "flow_bridge_available": true,
+      "initial_synthetic_credit_bytes": 0
+    },
+    "source_structure": {
+      "required_markers_present": true,
+      "marker_count": 5
+    },
+    "status": "PASS"
+  },
+  "resnet18_scale_validation": {
+    "status": "PASS",
+    "validation_scope": "actual ResNet-18 62-tensor trainable-parameter contract with synthetic float32 update values",
+    "tensor_count": 62,
+    "raw_model_mib": 42.654579,
+    "warmup_seconds_observed": 3.192,
+    "attack_seconds_observed": 15.393,
+    "peer_mode": "peer_sketch_oracle_self_projection",
+    "history_storage_mode": "memory",
+    "temporal_geometry_mode": "deterministic_coordinate_sketch",
+    "oracle_defenses": "flame",
+    "adaptive_stealth_enabled": true,
+    "large_model_adaptive_backoff_steps": 0,
+    "note": "This validates the runtime at the real 62-tensor ResNet-18 parameter scale. It is not a substitute for a live five-client Flower smoke test on the physical testbed."
+  },
+  "status": "PASS"
+}

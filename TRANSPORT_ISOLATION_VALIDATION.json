@@ -1,0 +1,30 @@
+{
+  "tool_version": "validate_transport_isolation_v27_1",
+  "non_target_exact_forwarding": {
+    "client_ip": "10.42.0.47",
+    "targeted": false,
+    "exact_bytes_preserved": true,
+    "expected_bytes": 71,
+    "received_bytes": 71,
+    "synthetic_credit_seen_by_client": false
+  },
+  "non_target_downstream_exact_forwarding": {
+    "client_ip": "10.42.0.47",
+    "targeted": false,
+    "exact_bytes_preserved": true,
+    "expected_bytes": 41,
+    "received_bytes": 41,
+    "server_credit_suppressed_bytes": 0
+  },
+  "target_authorization": {
+    "client_ip": "10.42.0.210",
+    "targeted": true,
+    "flow_bridge_available": true,
+    "initial_synthetic_credit_bytes": 0
+  },
+  "source_structure": {
+    "required_markers_present": true,
+    "marker_count": 5
+  },
+  "status": "PASS"
+}
